@@ -1,5 +1,6 @@
 import "./navBar.css";
-import logo from "../assets/logo.png"
+import logo from "../../assets/logo.png"
+import { CartWidget } from "./CartWidget";
 
 export const NavBar = () => {
   return (
@@ -32,9 +33,11 @@ export const NavBar = () => {
           </div>
 
           <div className="contenido-navbar">
+            
             <li>
-              <a href="#">Logo carrito</a>
+              <a href = "#"><CartWidget/><span>0</span></a>
             </li>
+
             <li>
               <a href="#">Iniciar Sesión</a>
             </li>

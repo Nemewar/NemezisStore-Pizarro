@@ -42,5 +42,12 @@ a {
     background-color: yellow;
 }
 
+.contenido-navbar:nth-child(3)  {
+    gap: 1rem;
+    align-items: center;
+}
+
+
+
 
 
