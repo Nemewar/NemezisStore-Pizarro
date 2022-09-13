@@ -14,15 +14,14 @@
     align-items: center;
 }
 
-img {
-    height: 7rem;
-    width: 10rem;
-}
 
+
+/*display inline block para que el tamaño del enlace sea el tamaño
+de la imagen*/
 a {
     text-decoration: none;
     color: black;
-    padding: 2rem;
+    display: inline-block;
 }
 
 
@@ -32,10 +31,22 @@ a {
 
 .contenido-navbar:nth-child(1) {
     align-items: center;
+    gap: 2rem;
+}
+
+.contenido-navbar:nth-child(1) img {
+    height: 7rem;
+    width: 10rem;
 }
 
 .contenido-navbar:nth-child(2) {
+    margin-right: 7rem;
     font-size: 3rem;
+    gap: 2rem;
+}
+
+.contenido-navbar:nth-child(2) a {
+    padding: 2rem;
 }
 
 .contenido-navbar:nth-child(2) a:hover {
@@ -43,7 +54,8 @@ a {
 }
 
 .contenido-navbar:nth-child(3)  {
-    gap: 1rem;
+    margin-right: 2rem;
+    gap: 3rem;
     align-items: center;
 }
 

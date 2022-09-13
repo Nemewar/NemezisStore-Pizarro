@@ -9,27 +9,34 @@ export const NavBar = () => {
         <ul className="navbar">
 
           <div className="contenido-navbar">
+
             <li>
-              <a href="#"><img src={logo} /></a>
+             <a href = "#"><img src={logo} /></a>
             </li>
+
             <li>
               <input
                 type="text"
                 placeholder="Buscar Productos"
               />
             </li>
+            
           </div>
 
           <div className="contenido-navbar">
+
             <li>
               <a href="#">Tienda</a>
             </li>
+
             <li>
               <a href="#">Nosotros</a>
             </li>
+
             <li>
               <a href="#">Contacto</a>
             </li>
+
           </div>
 
           <div className="contenido-navbar">
@@ -41,6 +48,7 @@ export const NavBar = () => {
             <li>
               <a href="#">Iniciar Sesión</a>
             </li>
+
           </div>
 
         </ul>
