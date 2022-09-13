@@ -3,6 +3,10 @@ import logo from "../../assets/logo.png"
 import { CartWidget } from "./CartWidget";
 
 export const NavBar = () => {
+
+
+
+
   return (
     <>
       <div className="contenedor-navbar">
@@ -42,7 +46,7 @@ export const NavBar = () => {
           <div className="contenido-navbar">
             
             <li>
-              <a href = "#"><CartWidget/><span>0</span></a>
+              <a href = "#"><CartWidget/></a>
             </li>
 
             <li>

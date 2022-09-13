@@ -1,0 +1,57 @@
+.contenedor-item {
+    max-width: 50rem;
+    margin: 5rem auto 0 auto;
+    font-size: 3rem;
+}
+
+
+.item {
+    display: flex;
+    flex-direction: column;
+    background-color:rgb(250, 240, 230);
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
+
+.contenedor-count {
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    padding: 1rem;
+}
+
+.contenedor-count p {
+    margin: 1rem 0;
+}
+
+.contenedor-count button{
+    font-size: 3rem;
+    border: none;
+    cursor: pointer;
+    color: rgb(0, 191, 255);
+    background-color: white;
+}
+
+.contenedor-count button:active{
+    color: blue
+}
+
+.contenedor-addToCart{
+    text-align: center;
+    margin-top: 2rem;
+    padding: 1rem;
+}
+
+.addToCart{
+    width: 100%;
+    border: none;
+    color: rgb(0, 191, 255);
+    background-color: white;
+    border: 1px solid rgb(0, 191, 255);
+    font-size: 2rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
