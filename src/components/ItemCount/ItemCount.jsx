@@ -7,7 +7,7 @@ export const ItemCount = ({ inicial, stock }) => {
 
     const [count, setCount] = useState(inicial)
 
-    const onAdd = () => {
+    const onIncrease = () => {
         if (count >= stock) {
             return
         }
@@ -21,6 +21,10 @@ export const ItemCount = ({ inicial, stock }) => {
         setCount(count - 1)
     }
 
+    const onAdd = () => {
+        alert("Item añadido al carrito")
+    }
+
 
     return (
         <>
@@ -28,13 +32,16 @@ export const ItemCount = ({ inicial, stock }) => {
                 <div className="item">
                     <p>Nombre Item</p>
                     <div className="contenedor-count">
-                        <button onClick={onAdd}>+</button>
+                        <button onClick={onIncrease}>+</button>
                         <p>{count}</p>
                         <button onClick={onSubstract}>-</button>
                     </div>
                 </div>
                 <div className="contenedor-addToCart">
-                    <button className="addToCart">Agregar al carrito</button>
+                    <button
+                        onClick={onAdd}
+                        className="addToCart"
+                    >Agregar al carrito</button>
                 </div>
             </div>
         </>
