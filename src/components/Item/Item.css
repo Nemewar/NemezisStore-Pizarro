@@ -1,52 +1,72 @@
 .contenedor-item {
-    max-width: 50rem;
-    margin: 5rem auto 0 auto;
-    font-size: 3rem;
+    font-size: 2rem;
     background-color: white;
     padding: 2rem;
     border-radius: 1rem;
+    transition: all 0.3s;
 }
 
+.contenedor-item:hover {
+    -webkit-box-shadow: 3px 3px 15px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 3px 3px 15px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 3px 3px 15px 0px rgba(0, 0, 0, 0.75);
+}
 
 .item {
     display: flex;
     flex-direction: column;
-    background-color:rgb(250, 240, 230);
+    background-color: rgb(250, 240, 230);
     padding: 1rem;
     border-radius: 0.5rem;
+    max-width: 40rem;
 }
+
+.item img {
+    width: 100%;
+    height: 300px;
+}
+
+
+.item p {
+    margin: 1rem 0;
+}
+
+.precio {
+    color: rgb(220, 20, 60)
+}
+
 
 
 .contenedor-count {
     display: flex;
     justify-content: space-between;
     background-color: white;
-    padding: 1rem;
+    padding: 0.5rem;
 }
 
 .contenedor-count p {
     margin: 1rem 0;
 }
 
-.contenedor-count button{
-    font-size: 3rem;
+.contenedor-count button {
+    font-size: 2rem;
     border: none;
     cursor: pointer;
     color: rgb(0, 191, 255);
     background-color: white;
 }
 
-.contenedor-count button:active{
+.contenedor-count button:active {
     color: blue
 }
 
-.contenedor-addToCart{
+.contenedor-addToCart {
     text-align: center;
     margin-top: 2rem;
     padding: 1rem;
 }
 
-.addToCart{
+.addToCart {
     width: 100%;
     border: none;
     color: rgb(0, 191, 255);
@@ -58,3 +78,7 @@
     cursor: pointer;
 }
 
+.addToCart:hover {
+    background-color: rgb(0, 191, 255);
+    color: white
+}

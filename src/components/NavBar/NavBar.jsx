@@ -1,5 +1,4 @@
 import "./navBar.css";
-import logo from "../../assets/logo.png"
 import { CartWidget } from "./CartWidget";
 
 export const NavBar = () => {
@@ -15,7 +14,7 @@ export const NavBar = () => {
           <div className="contenido-navbar">
 
             <li>
-             <a href = "#"><img src={logo} /></a>
+             <a href = "#"><img src="/assets/img/logos/logo.png" /></a>
             </li>
 
             <li>

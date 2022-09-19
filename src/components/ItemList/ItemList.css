@@ -1,0 +1,21 @@
+.content-items{
+    max-width: 100rem;
+    margin: 5rem auto 5rem auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+}
+
+@media(max-width:785px)
+{
+    .content-items
+    {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media(max-width:480px){
+    .content-items{
+        grid-template-columns: 1fr;
+    }
+}
