@@ -5,7 +5,8 @@ const data = [
         precio: "$30",
         stock: 5,
         categoría: "Carrera",
-        img: "/assets/img/items/ctr.JPG"
+        img: "/assets/img/items/ctr.JPG",
+        consola: "ps4"
     },
     {
         id: 2,
@@ -13,7 +14,8 @@ const data = [
         precio: "$35",
         stock: 4,
         categoría: "Aventura",
-        img: "/assets/img/items/ghostoftsushima.JPG"
+        img: "/assets/img/items/ghostoftsushima.JPG",
+        consola: "ps4"
     },
     {
         id: 3,
@@ -21,7 +23,8 @@ const data = [
         precio: "$30",
         stock: 5,
         categoría: "Aventura",
-        img: "/assets/img/items/GOW.JPG"
+        img: "/assets/img/items/GOW.JPG",
+        consola: "ps4"
     },
     {
         id: 4,
@@ -29,7 +32,8 @@ const data = [
         precio: "$30",
         stock: 5,
         categoría: "Aventura",
-        img: "/assets/img/items/GTAV.JPG"
+        img: "/assets/img/items/GTAV.JPG",
+        consola: "ps4"
     },
     {
         id: 5,
@@ -37,7 +41,8 @@ const data = [
         precio: "$30",
         stock: 5,
         categoría: "Aventura",
-        img: "/assets/img/items/HORIZON.JPG"
+        img: "/assets/img/items/HORIZON.JPG",
+        consola: "ps4"
     },
     {
         id: 6,
@@ -45,7 +50,8 @@ const data = [
         precio: "$30",
         stock: 5,
         categoría: "Terror",
-        img: "/assets/img/items/ReVillage.JPG"
+        img: "/assets/img/items/ReVillage.JPG",
+        consola: "ps4"
     },
     {
         id: 7,
@@ -53,7 +59,8 @@ const data = [
         precio: "$30",
         stock: 5,
         categoría: "Aventura",
-        img: "/assets/img/items/spiderman.JPG"
+        img: "/assets/img/items/spiderman.JPG",
+        consola: "ps4"
     },
     {
         id: 8,
@@ -61,7 +68,8 @@ const data = [
         precio: "$30",
         stock: 5,
         categoría: "lucha",
-        img: "/assets/img/items/tekken.JPG"
+        img: "/assets/img/items/tekken.JPG",
+        consola: "ps4"
     },
     {
         id: 9,
@@ -69,7 +77,8 @@ const data = [
         precio: "$30",
         stock: 5,
         categoría: "Terror",
-        img: "/assets/img/items/THLUS1.JPG"
+        img: "/assets/img/items/THLUS1.JPG",
+        consola: "ps4"
     },
     {
         id: 10,
@@ -77,7 +86,8 @@ const data = [
         precio: "$30",
         stock: 5,
         categoría: "Terror",
-        img: "/assets/img/items/THLUS2.JPG"
+        img: "/assets/img/items/THLUS2.JPG",
+        consola: "ps4"
     },
 ]
 
@@ -90,6 +100,21 @@ function getData(){
     })
 }
 
+function getSingleItem(id){
+    return new Promise( (resolve,reject) => {
+        const item = data.find( item => item.id===id);
+        if(item){
+            setTimeout(() => {
+               resolve(item) 
+            }, 2000);
+        }
+        else{
+            reject("No existe un item con ese id")
+        }
+    })
+}
+
 export{
-    getData
+    getData,
+    getSingleItem
 }
