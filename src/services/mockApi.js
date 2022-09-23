@@ -4,91 +4,177 @@ const data = [
         nombre: "CTR nitro Fueled",
         precio: "$30",
         stock: 5,
-        categoría: "Carrera",
-        img: "/assets/img/items/ctr.JPG",
-        consola: "ps4"
+        categoria: "ps4",
+        img: "/assets/img/items/ps4/ctr.JPG"
     },
     {
         id: 2,
         nombre: "Ghost of Tsushima",
         precio: "$35",
         stock: 4,
-        categoría: "Aventura",
-        img: "/assets/img/items/ghostoftsushima.JPG",
-        consola: "ps4"
+        categoria: "ps4",
+        img: "/assets/img/items/ps4/ghostoftsushima.JPG"
     },
     {
         id: 3,
         nombre: "God of war",
         precio: "$30",
         stock: 5,
-        categoría: "Aventura",
-        img: "/assets/img/items/GOW.JPG",
-        consola: "ps4"
+        categoria: "ps4",
+        img: "/assets/img/items/ps4/GOW.JPG"
     },
     {
         id: 4,
         nombre: "Grand Theft Auto V",
         precio: "$30",
         stock: 5,
-        categoría: "Aventura",
-        img: "/assets/img/items/GTAV.JPG",
-        consola: "ps4"
+        categoria: "ps4",
+        img: "/assets/img/items/ps4/GTAV.JPG"
     },
     {
         id: 5,
         nombre: "Horizon Zero Dawn",
         precio: "$30",
         stock: 5,
-        categoría: "Aventura",
-        img: "/assets/img/items/HORIZON.JPG",
-        consola: "ps4"
+        categoria: "ps4",
+        img: "/assets/img/items/ps4/HORIZON.JPG"
     },
     {
         id: 6,
         nombre: "Resident Evil Village",
         precio: "$30",
         stock: 5,
-        categoría: "Terror",
-        img: "/assets/img/items/ReVillage.JPG",
-        consola: "ps4"
+        categoria: "ps4",
+        img: "/assets/img/items/ps4/ReVillage.JPG"
     },
     {
         id: 7,
         nombre: "Marvel's Spider-Man",
         precio: "$30",
         stock: 5,
-        categoría: "Aventura",
-        img: "/assets/img/items/spiderman.JPG",
-        consola: "ps4"
+        categoria: "ps4",
+        img: "/assets/img/items/ps4/spiderman.JPG"
     },
     {
         id: 8,
         nombre: "Tekken 7",
         precio: "$30",
         stock: 5,
-        categoría: "lucha",
-        img: "/assets/img/items/tekken.JPG",
-        consola: "ps4"
+        categoria: "ps4",
+        img: "/assets/img/items/ps4/tekken.JPG"
     },
     {
         id: 9,
         nombre: "The Las Of Us Part. 1",
         precio: "$30",
         stock: 5,
-        categoría: "Terror",
-        img: "/assets/img/items/THLUS1.JPG",
-        consola: "ps4"
+        categoria: "ps4",
+        img: "/assets/img/items/ps4/THLUS1.JPG"
     },
     {
         id: 10,
         nombre: "The Last Of Us Part. 2",
         precio: "$30",
         stock: 5,
-        categoría: "Terror",
-        img: "/assets/img/items/THLUS2.JPG",
-        consola: "ps4"
+        categoria: "ps4",
+        img: "/assets/img/items/ps4/THLUS2.JPG"
     },
+    {
+        id: 11,
+        nombre: "COD: Black Ops Cold War",
+        precio: "$41",
+        stock: 5,
+        categoria: "xboxone",
+        img: "/assets/img/items/xboxone/call of duty black ops cold war.jpg"
+    },
+    {
+        id: 12,
+        nombre: "Fallout 76: Wastelanders",
+        precio: "$9",
+        stock: 5,
+        categoria: "xboxone",
+        img: "/assets/img/items/xboxone/Fallout76.jpg"
+    },
+    {
+        id: 13,
+        nombre: "FIFA 21",
+        precio: "$11",
+        stock: 5,
+        categoria: "xboxone",
+        img: "/assets/img/items/xboxone/fifa21.jpg"
+    },
+    {
+        id: 14,
+        nombre: "Forza Horizon 4",
+        precio: "$22",
+        stock: 5,
+        categoria: "xboxone",
+        img: "/assets/img/items/xboxone/forzahorizon4.jpg"
+    },
+    {
+        id: 15,
+        nombre: "Grand Theft Auto V",
+        precio: "$20",
+        stock: 5,
+        categoria: "xboxone",
+        img: "/assets/img/items/xboxone/GTAV.jpg"
+    },
+    {
+        id: 16,
+        nombre: "Metro Exodus",
+        precio: "$14",
+        stock: 5,
+        categoria: "xboxone",
+        img: "/assets/img/items/xboxone/metroexodus.jpg"
+    },
+    {
+        id: 17,
+        nombre: "Red Dead Redemption 2",
+        precio: "$29",
+        stock: 5,
+        categoria: "xboxone",
+        img: "/assets/img/items/xboxone/readdeadredemption.jpg"
+    },
+    {
+        id: 18,
+        nombre: "Just Dance 2022",
+        precio: "$19",
+        stock: 5,
+        categoria: "nintendoswitch",
+        img: "/assets/img/items/nintendoswitch/justdance2022.jpg"
+    },
+    {
+        id: 19,
+        nombre: "Minecraft",
+        precio: "$15",
+        stock: 5,
+        categoria: "nintendoswitch",
+        img: "/assets/img/items/nintendoswitch/minecraft.jpg"
+    },
+    {
+        id: 20,
+        nombre: "Pokémon Legends: Arceus",
+        precio: "$50",
+        stock: 5,
+        categoria: "nintendoswitch",
+        img: "/assets/img/items/nintendoswitch/pokemonlegendsarkeus.jpg"
+    },
+    {
+        id: 21,
+        nombre: "Super Mario Odyssey",
+        precio: "$49",
+        stock: 5,
+        categoria: "nintendoswitch",
+        img: "/assets/img/items/nintendoswitch/supermarioodyssey.jpg"
+    },
+    {
+        id: 22,
+        nombre: "Super Smash Bros. Ultimate",
+        precio: "$49",
+        stock: 5,
+        categoria: "nintendoswitch",
+        img: "/assets/img/items/nintendoswitch/supersmashbros.jpg"
+    }
 ]
 
 
@@ -96,7 +182,7 @@ function getData(){
     return new Promise( (resolve,reject) => {
         setTimeout(() => {
             resolve(data)
-        }, 1000);
+        }, 500);
     })
 }
 
@@ -106,7 +192,7 @@ function getSingleItem(id){
         if(item){
             setTimeout(() => {
                resolve(item) 
-            }, 2000);
+            }, 500);
         }
         else{
             reject("No existe un item con ese id")
@@ -114,7 +200,37 @@ function getSingleItem(id){
     })
 }
 
+function getItemsByCategory(cat){
+    return new Promise( (resolve,reject) => {
+        const items = data.filter( item => item.categoria===cat);
+        if(items){
+            setTimeout(() => {
+                resolve(items)
+            }, 500);
+        }
+        else{
+            reject("No hay items con esa categoria")
+        }
+    })
+}
+
+function getItemsByInputSearch(q){
+    return new Promise((resolve,reject) => {
+        const items = data.filter( item => item.nombre.toLowerCase().includes(q));
+        if(items){
+            setTimeout(() => {
+                resolve(items)
+            }, 500);
+        }
+        else{
+            reject("No hay items con ese input")
+        }
+    })
+}
+
 export{
     getData,
-    getSingleItem
+    getSingleItem,
+    getItemsByCategory,
+    getItemsByInputSearch
 }

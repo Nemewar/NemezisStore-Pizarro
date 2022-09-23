@@ -2,7 +2,7 @@
     max-width: 100rem;
     margin: 5rem auto 5rem auto;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 2rem;
 }
 

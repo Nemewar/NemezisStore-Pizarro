@@ -1,0 +1,12 @@
+.msg-search {
+    margin: 5rem auto 5rem auto;
+    max-width: 110rem;
+}
+
+.msg-error {
+    max-width: 100rem;
+    margin: 5rem auto 5rem auto;
+    font-size: 2rem;
+    padding: 1rem;
+    background-color: rgb(220, 20, 60);
+}
