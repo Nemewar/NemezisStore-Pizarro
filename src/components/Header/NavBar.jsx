@@ -18,6 +18,13 @@ export const NavBar = () => {
     })
   }
 
+  const onReset = () => {
+    setForm({
+      ...form,
+      searchText: ""
+    })
+  }
+
   const onSubmit = (ev) => {
     ev.preventDefault()
     if (form.searchText.length !== 0) {
@@ -25,10 +32,7 @@ export const NavBar = () => {
         pathname: "/search",
         search: `?q=${form.searchText}`
       })
-      setForm({
-        ...form,
-        searchText: ""
-      })
+      onReset()
     }
   }
 
@@ -40,8 +44,8 @@ export const NavBar = () => {
 
           <div className="contenido-navbar left">
 
-            <li>
-              <Link to="/"><img src="/assets/img/logos/NemezisStore.jpg"/></Link>
+            <li onClick={onReset}>
+              <Link to="/"><img src="/assets/img/logos/NemezisStore.jpg" /></Link>
             </li>
 
             <li>
@@ -61,7 +65,7 @@ export const NavBar = () => {
 
           <div className="contenido-navbar center">
 
-            <li>
+            <li onClick={onReset}>
               <Link to="/">Videojuegos</Link>
               <ul className="submenu">
                 <li><Link to="/categoria/ps4">PS4</Link></li>
@@ -70,11 +74,11 @@ export const NavBar = () => {
               </ul>
             </li>
 
-            <li>
+            <li onClick={onReset}>
               <Link to="/nosotros">Nosotros</Link>
             </li>
 
-            <li>
+            <li onClick={onReset}>
               <Link to="/contacto">Contacto</Link>
             </li>
 
@@ -82,11 +86,11 @@ export const NavBar = () => {
 
           <div className="contenido-navbar end">
 
-            <li>
+            <li onClick={onReset}>
               <a href="#"><CartWidget /></a>
             </li>
 
-            <li>
+            <li onClick={onReset}>
               <Link to="/login">Iniciar Sesión</Link>
             </li>
 
