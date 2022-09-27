@@ -41,7 +41,7 @@ export const NavBar = () => {
           <div className="contenido-navbar left">
 
             <li>
-              <Link to="/"><img src="/assets/img/logos/NemezisStore.jpg" /></Link>
+              <Link to="/"><img src="/assets/img/logos/NemezisStore.jpg"/></Link>
             </li>
 
             <li>
@@ -61,7 +61,7 @@ export const NavBar = () => {
 
           <div className="contenido-navbar center">
 
-            <li className="asdf">
+            <li>
               <Link to="/">Videojuegos</Link>
               <ul className="submenu">
                 <li><Link to="/categoria/ps4">PS4</Link></li>

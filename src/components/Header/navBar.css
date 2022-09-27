@@ -1,10 +1,8 @@
 .contenedor-navbar {
-
     background-color: rgb(0, 191, 255);
-  
 }
 
-.contenedor-navbar ul{
+.contenedor-navbar ul {
     list-style: none;
 }
 
@@ -14,7 +12,6 @@
     padding: 0;
     display: flex;
     justify-content: space-between;
-    align-items: center;
 }
 
 
@@ -28,26 +25,35 @@ a {
 }
 
 
-
-
-/* NAVBAR DEL INICIO*/
-.contenido-navbar:nth-child(1) {
+/* NAVBAR DEL INICIO// NAVBAR DEL INICIO//NAVBAR DEL INICIO//NAVBAR DEL INICIO//
+NAVBAR DEL INICIO//NAVBAR DEL INICIO//NAVBAR DEL INICIO//NAVBAR DEL INICIO//*/
+.left {
     margin-left: 1rem;
     align-items: center;
     gap: 2rem;
 }
 
-.contenido-navbar:nth-child(1) a{
+/* le ponemos font size 0 porque al parecer hay un espacio en blanco generando
+una altura adicional*/
+.left li {
     display: inline-block;
+    font-size: 0;
 }
 
-.contenido-navbar:nth-child(1) img {
+/* le ponemos font size 0 porque al parecer hay un espacio en blanco generando
+una altura adicional*/
+.left a {
+    display: inline-block;
+    font-size: 0;
+}
+
+.left img {
     height: 7rem;
     width: 10rem;
 }
 
 
-.contenido-navbar:nth-child(1) input{
+.left input {
     padding: 1rem;
     font-size: 1.8rem;
     border: none;
@@ -60,68 +66,73 @@ a {
 
 
 
-/* NAVBAR DEL MEDIO*/
+/* NAVBAR DEL MEDIO// NAVBAR DEL MEDIO//NAVBAR DEL MEDIO//NAVBAR DEL MEDIO//NAVBAR DEL MEDIO//
+NAVBAR DEL MEDIO//NAVBAR DEL MEDIO//NAVBAR DEL MEDIO//NAVBAR DEL MEDIO//NAVBAR DEL MEDIO// */
 
 /*este display block nos ayuda a que los enlaces vayan uno debajos de otros
     y tengan más separacion*/
-.contenido-navbar:nth-child(2) a{
+.center a {
     display: inline-block;
 }
 
 
-.contenido-navbar:nth-child(2) {
+.center {
     margin-right: 7rem;
     font-size: 3rem;
     gap: 2rem;
 }
 
-.contenido-navbar:nth-child(2) > li > a {
+.center>li>a {
     padding: 2rem;
     transition: all ease 0.3s;
 }
 
-.contenido-navbar:nth-child(2) > li > a:hover {
+.center>li>a:hover {
     color: white;
 }
 
-.contenido-navbar:nth-child(2) li:first-child{
+.center li:first-child {
     position: relative;
 }
 
-.submenu{
+.submenu {
     position: absolute;
     background-color: white;
     display: none;
+    transition: all 0.3s ease;
 }
 
-.submenu li a{
+
+.submenu li a {
     padding: 1.5rem 5rem 1.5rem 0.5rem;
     color: black;
     font-size: 1.7rem;
 }
 
-.submenu li a:hover{
-    color:rgb(220, 20, 60);
+.submenu li a:hover {
+    color: rgb(220, 20, 60) !important;
     font-weight: bold;
 }
 
-.contenido-navbar:nth-child(2) li:first-child:hover .submenu{
+
+/* cuando hacemos esta sintacis de hover no podemos irnos mas arriba
+de .center li:first-child, solo a sus elementos hijos */
+.center li:first-child:hover .submenu {
     display: block;
 }
 
-
-
-
-
-/* NAVBAR DEL FINAL*/
-
-.contenido-navbar:nth-child(3)  {
-    margin-right: 5rem;
-    gap: 3rem;
-    align-items: center;
+.center li:first-child:hover>a {
+    color: white;
 }
 
 
 
+/* NAVBAR DEL FINAL// NAVBAR DEL FINAL//NAVBAR DEL FINAL//NAVBAR DEL FINAL//NAVBAR DEL FINAL//
+NAVBAR DEL FINAL//NAVBAR DEL FINAL//NAVBAR DEL FINAL//NAVBAR DEL FINAL//NAVBAR DEL FINAL//*/
 
-
+.end {
+    margin-right: 5rem;
+    gap: 3rem;
+    align-items: center;
+    white-space: nowrap;
+}

@@ -10,12 +10,14 @@
 {
     .content-items
     {
+        max-width: 80%;
         grid-template-columns: 1fr 1fr;
     }
 }
 
 @media(max-width:480px){
     .content-items{
+        max-width: 80%;
         grid-template-columns: 1fr;
     }
 }
