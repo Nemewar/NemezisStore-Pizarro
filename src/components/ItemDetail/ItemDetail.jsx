@@ -1,30 +1,27 @@
 
 import { useState } from "react"
+import { useNavigate } from "react-router-dom";
+import { ItemCount } from "../ItemCount/ItemCount"
 import "./ItemDetail.css"
 
 
 export const ItemDetail = ({ item }) => {
 
-    const [count, setCount] = useState(1)
-
-    const onIncrease = () => {
-        if (count >= item.stock) {
-            return
-        }
-        setCount(count + 1)
-    }
-
-    const onSubstract = () => {
-        if (count <= 1) {
-            return
-        }
-        setCount(count - 1)
-    }
+    const [itemAñadido, setItemAñadido] = useState(false);
+    const navigate = useNavigate();
 
     const onAdd = () => {
-        alert("Añadido el item al carrito!")
+        alert("Item Añadido al carrito")
+        setItemAñadido(true)
     }
 
+    const onGoToCart = () => {
+        navigate("/cart")
+    }
+
+    const onGoToProductos = () => {
+        navigate("/")
+    }
 
     return (
         <>
@@ -37,18 +34,21 @@ export const ItemDetail = ({ item }) => {
                     <p className="itemdetail__nombre">{item.nombre}</p>
                     <p className="itemdetail__precio">{item.precio}</p>
                     <p className="itemdetail__stock">Disponible: {item.stock} unidades</p>
-                    <p className="itemdetail__cantidad">Cantidad:</p>
-                    <div className="itemdetail__count">
-                        <button onClick={onIncrease}>+</button>
-                        <p>{count}</p>
-                        <button onClick={onSubstract}>-</button>
-                    </div>
-                    <div className="itemdetail__addtocart">
-                        <button
-                            className="addtocartdetail"
-                            onClick={onAdd}
-                        >Agregar al carrito</button>
-                    </div>
+                    {(!itemAñadido) && <ItemCount inicial={1} stock={item.stock} onAdd={onAdd} />}
+                    {(itemAñadido) &&
+                        <div className="itemdetail__btns">
+                            <button
+                                className="btn_gotocart"
+                                onClick={onGoToCart}
+                            >Ir al carrito</button>
+                            <button
+                                className="btn_gotoproducts"
+                                onClick={onGoToProductos}
+                            >Seguir comprando</button>
+                        </div>}
+
+
+
                 </div>
             </div>
         </>

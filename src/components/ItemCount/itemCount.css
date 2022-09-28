@@ -1,60 +1,31 @@
-.contenedor-item {
-    max-width: 50rem;
-    margin: 5rem auto 0 auto;
-    font-size: 3rem;
-    background-color: white;
-    padding: 2rem;
-    border-radius: 1rem;
+.itemdetail__cantidad{
+    font-weight: bold;
 }
 
-
-.item {
+.itemdetail__count{
     display: flex;
-    flex-direction: column;
-    background-color:rgb(250, 240, 230);
-    padding: 1rem;
-    border-radius: 0.5rem;
+    gap: 1rem;
+    align-items: center;
 }
 
+.itemdetail__count p{
+    margin: 0;
+}
 
-.contenedor-count {
-    display: flex;
-    justify-content: space-between;
+.itemdetail__count button, .goToCart{
     background-color: white;
-    padding: 1rem;
-}
-
-.contenedor-count p {
-    margin: 1rem 0;
-}
-
-.contenedor-count button{
-    font-size: 3rem;
-    border: none;
     cursor: pointer;
-    color: rgb(0, 191, 255);
-    background-color: white;
-}
-
-.contenedor-count button:active{
-    color: blue
-}
-
-.contenedor-addToCart{
-    text-align: center;
-    margin-top: 2rem;
+    border: 1px solid black;
     padding: 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
 }
 
-.addToCart{
-    width: 100%;
-    border: none;
-    color: rgb(0, 191, 255);
-    background-color: white;
-    border: 1px solid rgb(0, 191, 255);
-    font-size: 2rem;
-    padding: 1rem;
-    border-radius: 0.5rem;
-    cursor: pointer;
+.itemdetail__count button:hover, .goToCart:hover{
+    background-color: rgb(208, 206, 206)
+}
+
+.goToCart{
+    max-width: 14.8rem;
 }
 
