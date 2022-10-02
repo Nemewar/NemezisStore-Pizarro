@@ -3,7 +3,13 @@ import { CartWidget } from "./CartWidget";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 
+import { AiOutlineMenu } from "react-icons/ai"
+import { AiOutlineSearch } from "react-icons/ai"
+import { UserWidget } from "./UserWidget";
+import { useRef } from "react";
+
 export const NavBar = () => {
+
 
   const [form, setForm] = useState({
     searchText: ""
@@ -37,67 +43,139 @@ export const NavBar = () => {
   }
 
 
+
+
+
+  //realizar esto porque al hacer click en el menu
+  //para desaparecer el navbar top, al ampliar la imagen
+  //el navbar top sigue oculto y no se puede aggrandar
+  const [click, setClick] = useState(false);
+
+  const botRef = useRef();
+
+  const mostrarBot = () => {
+    const bot = botRef.current;
+    if (bot.style.display === "flex") {
+      bot.style.display = "none"
+      setClick(false);
+    } else {
+      bot.style.display = "flex"
+      setClick(true);
+    }
+  }
+
+  window.addEventListener("resize", () => {
+    let ancho = document.documentElement.clientWidth;
+    if (ancho > 768) {
+      setClick(false)
+      botRef.current.style.display = "flex"
+    }
+    else {
+      if (click) {
+        botRef.current.style.display = "flex"
+      } else {
+        botRef.current.style.display = "none"
+      }
+    }
+  })
+
+
   return (
     <>
-      <nav className="contenedor-navbar">
-        <ul className="navbar">
+      <nav className="contenedor-nav-top">
 
-          <div className="contenido-navbar left">
+        <ul className="top">
 
-            <li onClick={onReset}>
-              <Link to="/"><img src="/assets/img/logos/NemezisStore.jpg" /></Link>
-            </li>
+          <li className="menu">
+            <button onClick={mostrarBot}>
+              <AiOutlineMenu size={35} />
+            </button>
+          </li>
 
-            <li>
-              <form onSubmit={onSubmit}>
-                <input
-                  name="searchText"
-                  type="text"
-                  placeholder="Buscar Productos"
-                  autoComplete="off"
-                  value={form.searchText}
-                  onChange={onchangeInput}
-                />
-              </form>
-            </li>
+          <li onClick={onReset}>
+            <Link to="/"><img src="/assets/img/logos/nemeLogo.JPG" /></Link>
+          </li>
 
-          </div>
+          <form
+            onSubmit={onSubmit}
+            className="top-search"
+          >
+            <input
+              name="searchText"
+              type="text"
+              placeholder="Buscar Productos"
+              autoComplete="off"
+              value={form.searchText}
+              onChange={onchangeInput}
+            />
+            <AiOutlineSearch size={30} />
+          </form>
 
-          <div className="contenido-navbar center">
 
-            <li onClick={onReset}>
-              <Link to="/">Videojuegos</Link>
-              <ul className="submenu">
-                <li><Link to="/categoria/ps4">PS4</Link></li>
-                <li><Link to="/categoria/nintendoswitch">NINTENDO SWITCH</Link></li>
-                <li><Link to="/categoria/xboxone">XBOX ONE</Link></li>
-              </ul>
-            </li>
+          <li
+            className="cart"
+            onClick={onReset}
+          >
+            <Link to="/cart">
+              <CartWidget />
+            </Link>
+          </li>
 
-            <li onClick={onReset}>
-              <Link to="/nosotros">Nosotros</Link>
-            </li>
-
-            <li onClick={onReset}>
-              <Link to="/contacto">Contacto</Link>
-            </li>
-
-          </div>
-
-          <div className="contenido-navbar end">
-
-            <li onClick={onReset}>
-              <a href="#"><CartWidget /></a>
-            </li>
-
-            <li onClick={onReset}>
-              <Link to="/login">Iniciar Sesión</Link>
-            </li>
-
-          </div>
+          <li
+            className="user"
+            onClick={onReset}
+          >
+            <Link to="/login"><UserWidget /></Link>
+          </li>
 
         </ul>
       </nav>
+
+      <nav className="contenedor-nav-bot">
+
+        <div
+          ref={botRef}
+          className="bot"
+        >
+          <Link
+            to="/categoria/ps4"
+            onClick={onReset}
+          >
+            PS4</Link>
+
+          <Link
+            to="/categoria/nintendoswitch"
+            onClick={onReset}
+          >
+            NINTENDO SWITCH
+          </Link>
+
+          <Link
+            to="/categoria/xboxone"
+            onClick={onReset}
+          >
+            XBOX ONE
+          </Link>
+
+          <Link
+            to="/nosotros"
+            onClick={onReset}
+          >
+            NOSOTROS
+          </Link>
+
+          <Link
+            to="/contacto"
+            onClick={onReset}
+          >
+            CONTACTO
+          </Link>
+        </div>
+
+      </nav>
+
+
+
     </>
   )
 }

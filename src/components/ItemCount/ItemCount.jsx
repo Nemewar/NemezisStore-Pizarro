@@ -22,7 +22,7 @@ export const ItemCount = ({ inicial, stock, onAdd }) => {
     }
 
     const onAddToCart = () => {
-        onAdd();
+        onAdd(count);
     }
 
 

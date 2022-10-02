@@ -11,6 +11,7 @@ import { Login } from './components/Login/Login';
 import { Contacto } from './components/Contacto/Contacto';
 import { Nosotros } from './components/Nosotros/Nosotros';
 import { Cart } from './components/Cart/Cart';
+import { CartProvider } from './components/context/CartContext';
 
 
 
@@ -19,21 +20,21 @@ function App() {
 
   return (
     <>
-      <NavBar />
-      <Routes>
-        <Route path="/" element={<ItemListContainer />} />
-        <Route path="/item/:id" element={<ItemDetailContainer />} />
-        <Route path="/categoria/:cat" element={<ItemListContainer />} />
-        <Route path = "/search" element={<Search/>} />
+      <CartProvider>
+        <NavBar />
+        <Routes>
+          <Route path="/" element={<ItemListContainer />} />
+          <Route path="/item/:id" element={<ItemDetailContainer />} />
+          <Route path="/categoria/:cat" element={<ItemListContainer />} />
+          <Route path="/search" element={<Search />} />
 
-        <Route path="/contacto" element={<Contacto />} />
-        <Route path="/nosotros" element={<Nosotros />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/cart" element={<Cart/>} />
+          <Route path="/contacto" element={<Contacto />} />
+          <Route path="/nosotros" element={<Nosotros />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/cart" element={<Cart />} />
 
-      </Routes>
-
-      
+        </Routes>
+      </CartProvider>
     </>
 
   );

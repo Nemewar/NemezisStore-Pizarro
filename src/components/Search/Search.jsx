@@ -55,9 +55,7 @@ export const Search = () => {
                         </div>)
                         : <ItemList data={data.data} />
                     : console.log("any")
-                    
             }
-
         </>
     )
 }

@@ -1,17 +1,32 @@
+import { useContext } from "react";
+import { useState } from "react"
 import { AiOutlineShoppingCart } from "react-icons/ai"
+import CartContext from "../context/CartContext";
 
 export const CartWidget = () => {
 
-  const styleCart = {
-    display: "flex",
-    alignItems: "flex-end",
-    gap: "0.5rem"
-  }
+
+  const {cantidadProductos} = useContext(CartContext);
+
 
   return (
     <>
-      <div style={styleCart}>
-        <AiOutlineShoppingCart size={35} /><span>0</span>
+      <div style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        whiteSpace: "nowrap"
+      }}>
+        <div>
+          <AiOutlineShoppingCart size={35} />
+          <sub style={{
+            fontSize: "1.8rem"
+          }}>{cantidadProductos()}</sub>
+        </div>
+        <span className="cart" style={{
+          marginLeft: "1rem",
+          fontSize: "1.8rem"
+        }}>Mi carro</span>
       </div>
     </>
   )

@@ -1,4 +1,9 @@
-.content-items{
+.contitems {
+    margin-right: 2rem;
+    margin-left: 2rem;
+}
+
+.content-items {
     max-width: 100rem;
     margin: 5rem auto 5rem auto;
     display: grid;
@@ -6,17 +11,15 @@
     gap: 2rem;
 }
 
-@media(max-width:785px)
-{
-    .content-items
-    {
+@media(max-width:785px) {
+    .content-items {
         max-width: 80%;
         grid-template-columns: 1fr 1fr;
     }
 }
 
-@media(max-width:480px){
-    .content-items{
+@media(max-width:480px) {
+    .content-items {
         max-width: 80%;
         grid-template-columns: 1fr;
     }

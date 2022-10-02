@@ -1,138 +1,168 @@
-.contenedor-navbar {
-    background-color: rgb(0, 191, 255);
+li {
+    text-align: center;
 }
-
-.contenedor-navbar ul {
-    list-style: none;
-}
-
-.navbar {
-    max-width: 100%;
-    margin: 0 auto;
-    padding: 0;
-    display: flex;
-    justify-content: space-between;
-}
-
 
 a {
+    display: inline-block;
     text-decoration: none;
     color: black;
 }
 
-.contenido-navbar {
-    display: flex;
+span {
+    white-space: nowrap;
 }
 
 
-/* NAVBAR DEL INICIO// NAVBAR DEL INICIO//NAVBAR DEL INICIO//NAVBAR DEL INICIO//
-NAVBAR DEL INICIO//NAVBAR DEL INICIO//NAVBAR DEL INICIO//NAVBAR DEL INICIO//*/
-.left {
-    margin-left: 1rem;
+
+/* NAVBAR TOP // NAVBAR TOP // NAVBAR TOP // NAVBAR TOP // NAVBAR TOP // 
+NAVBAR TOP // NAVBAR TOP // NAVBAR TOP // NAVBAR TOP // NAVBAR TOP // */
+
+.contenedor-nav-top {
+    padding-top: 3rem;
+    margin-right: 2rem;
+    margin-left: 2rem;
+}
+
+
+.top,
+.bot {
+    list-style: none;
+    padding: 0;
+
+}
+
+.top {
+    max-width: 130rem;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr 1fr;
     align-items: center;
     gap: 2rem;
 }
 
-/* le ponemos font size 0 porque al parecer hay un espacio en blanco generando
-una altura adicional*/
-.left li {
-    display: inline-block;
-    font-size: 0;
-}
-
-/* le ponemos font size 0 porque al parecer hay un espacio en blanco generando
-una altura adicional*/
-.left a {
-    display: inline-block;
-    font-size: 0;
-}
-
-.left img {
-    height: 7rem;
-    width: 10rem;
-}
-
-
-.left input {
-    padding: 1rem;
-    font-size: 1.8rem;
-    border: none;
-    border-radius: 0.5rem;
-}
-
-
-
-
-
-
-
-/* NAVBAR DEL MEDIO// NAVBAR DEL MEDIO//NAVBAR DEL MEDIO//NAVBAR DEL MEDIO//NAVBAR DEL MEDIO//
-NAVBAR DEL MEDIO//NAVBAR DEL MEDIO//NAVBAR DEL MEDIO//NAVBAR DEL MEDIO//NAVBAR DEL MEDIO// */
-
-/*este display block nos ayuda a que los enlaces vayan uno debajos de otros
-    y tengan más separacion*/
-.center a {
-    display: inline-block;
-}
-
-
-.center {
-    margin-right: 7rem;
-    font-size: 3rem;
-    gap: 2rem;
-}
-
-.center>li>a {
-    padding: 2rem;
-    transition: all ease 0.3s;
-}
-
-.center>li>a:hover {
-    color: white;
-}
-
-.center li:first-child {
-    position: relative;
-}
-
-.submenu {
-    position: absolute;
-    background-color: white;
+.top .menu {
     display: none;
+}
+
+.menu button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.top img {
+    max-height: 54px;
+}
+
+.top-search {
+    margin-left: 5rem;
+    padding: 0.2rem;
+    border: 2px solid rgb(0, 191, 255);
+    border-radius: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 100%;
+}
+
+.top input {
+    width: 100%;
+    padding: 1rem;
+    font-size: 2rem;
+    border-radius: 0.5rem;
+    border: none;
+    outline: none;
+}
+
+.top .cart,
+.top .user {
+    text-align: right;
+}
+
+/* NAVBAR BOT // NAVBAR BOT // NAVBAR BOT // NAVBAR BOT // NAVBAR BOT // 
+NAVBAR BOT // NAVBAR BOT // NAVBAR BOT // NAVBAR BOT // NAVBAR BOT // */
+
+.contenedor-nav-bot {
+    overflow: hidden;
+}
+
+.bot {
+    margin-right: 3rem;
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+}
+
+.bot a {
+    font-size: 1.8rem;
+    font-weight: bold;
     transition: all 0.3s ease;
 }
 
-
-.submenu li a {
-    padding: 1.5rem 5rem 1.5rem 0.5rem;
-    color: black;
-    font-size: 1.7rem;
-}
-
-.submenu li a:hover {
-    color: rgb(220, 20, 60) !important;
-    font-weight: bold;
-}
-
-
-/* cuando hacemos esta sintacis de hover no podemos irnos mas arriba
-de .center li:first-child, solo a sus elementos hijos */
-.center li:first-child:hover .submenu {
-    display: block;
-}
-
-.center li:first-child:hover>a {
-    color: white;
+.bot a:hover {
+    color: rgb(0, 191, 255);
 }
 
 
 
-/* NAVBAR DEL FINAL// NAVBAR DEL FINAL//NAVBAR DEL FINAL//NAVBAR DEL FINAL//NAVBAR DEL FINAL//
-NAVBAR DEL FINAL//NAVBAR DEL FINAL//NAVBAR DEL FINAL//NAVBAR DEL FINAL//NAVBAR DEL FINAL//*/
 
-.end {
-    margin-right: 5rem;
-    gap: 3rem;
-    align-items: center;
-    white-space: nowrap;
+
+
+/* MEDIA QUERIES // MEDIA QUERIES // MEDIA QUERIES // MEDIA QUERIES // 
+MEDIA QUERIES // MEDIA QUERIES // MEDIA QUERIES // MEDIA QUERIES // MEDIA QUERIES //  */
+
+@media(max-width:907px) {
+    .top span {
+        display: none;
+    }
+
+}
+
+
+@media (max-width:768px) {
+    .top {
+        grid-template-columns: auto auto auto auto;
+        gap: 1rem;
+    }
+
+    .top .menu {
+        display: block;
+        text-align: start;
+    }
+
+
+    .top img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .top-search {
+        grid-row: 2/3;
+        grid-column: 1/5;
+        margin-left: 0;
+    }
+
+    .bot {
+        margin-right: 0;
+        flex-direction: column;
+        align-items: center;
+        gap: 0rem;
+        background-color: rgb(40, 185, 233);
+    }
+
+    .bot a {
+        transition: none;
+        text-align: center;
+        width: 100%;
+        padding: 2rem;
+    }
+
+
+    .bot a:hover {
+        background-color: #115982;
+    }
+
+
+
 }

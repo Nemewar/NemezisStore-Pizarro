@@ -1,6 +1,8 @@
 
+import { useContext } from "react";
 import { useState } from "react"
 import { useNavigate } from "react-router-dom";
+import CartContext from "../context/CartContext";
 import { ItemCount } from "../ItemCount/ItemCount"
 import "./ItemDetail.css"
 
@@ -8,11 +10,14 @@ import "./ItemDetail.css"
 export const ItemDetail = ({ item }) => {
 
     const [itemAñadido, setItemAñadido] = useState(false);
+    const {addItem} = useContext(CartContext);
     const navigate = useNavigate();
 
-    const onAdd = () => {
+    const onAdd = (cantidad) => {
         alert("Item Añadido al carrito")
         setItemAñadido(true)
+        const nuevoItem = {...item,cantidad};
+        addItem(nuevoItem);
     }
 
     const onGoToCart = () => {
@@ -34,8 +39,13 @@ export const ItemDetail = ({ item }) => {
                     <p className="itemdetail__nombre">{item.nombre}</p>
                     <p className="itemdetail__precio">{item.precio}</p>
                     <p className="itemdetail__stock">Disponible: {item.stock} unidades</p>
-                    {(!itemAñadido) && <ItemCount inicial={1} stock={item.stock} onAdd={onAdd} />}
-                    {(itemAñadido) &&
+
+                    {
+                        (!itemAñadido) && <ItemCount inicial={1} stock={item.stock} onAdd={onAdd} />
+                    }
+
+                    {
+                        (itemAñadido) &&
                         <div className="itemdetail__btns">
                             <button
                                 className="btn_gotocart"
@@ -45,7 +55,8 @@ export const ItemDetail = ({ item }) => {
                                 className="btn_gotoproducts"
                                 onClick={onGoToProductos}
                             >Seguir comprando</button>
-                        </div>}
+                        </div>
+                    }
 
 
 
