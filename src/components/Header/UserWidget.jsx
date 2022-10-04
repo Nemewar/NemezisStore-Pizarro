@@ -9,7 +9,8 @@ export const UserWidget = () => {
             }}>
                 <HiUser size={35} />
                 <span style={{
-                    fontSize: "1.8rem"
+                    fontSize: "1.8rem",
+                    
                 }}>Ingresar</span>
             </div>
         </>

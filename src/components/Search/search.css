@@ -1,3 +1,9 @@
+.search-container{
+    margin-top: 8rem;
+    margin-right: 2rem;
+    margin-left: 2rem;
+}
+
 .msg-search {
     margin: 5rem auto 5rem auto;
     max-width: 110rem;

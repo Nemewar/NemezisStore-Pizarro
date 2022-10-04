@@ -22,7 +22,8 @@
 }
 
 .itemdetail__count button:hover, .goToCart:hover{
-    background-color: rgb(208, 206, 206)
+    background-color: black;
+    color: white;
 }
 
 .goToCart{

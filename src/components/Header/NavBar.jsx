@@ -66,7 +66,8 @@ export const NavBar = () => {
 
   window.addEventListener("resize", () => {
     let ancho = document.documentElement.clientWidth;
-    if (ancho > 768) {
+    console.log(ancho)
+    if (ancho > 751) {
       setClick(false)
       botRef.current.style.display = "flex"
     }

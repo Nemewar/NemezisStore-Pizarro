@@ -3,6 +3,8 @@
     margin-top: 10rem;
     justify-content: center;
     gap: 15rem;
+    margin-right: 2rem;
+    margin-left: 2rem;
 }
 
 .itemdetail__imagen img {
@@ -55,5 +57,26 @@
 
 .btn_gotocart:hover,
 .btn_gotoproducts:hover {
-    background-color: rgb(208, 206, 206)
+    background-color: black;
+    color: white;
+}
+
+
+/* MEDIA QUERIES // MEDIA QUERIES // MEDIA QUERIES //MEDIA QUERIES //MEDIA QUERIES //
+MEDIA QUERIES //MEDIA QUERIES //MEDIA QUERIES //MEDIA QUERIES //MEDIA QUERIES //*/
+
+@media(max-width:768px){
+    .itemdetail{
+        margin-top: 5rem;
+        margin-bottom: 5rem;
+        flex-direction: column;
+        align-items: center;
+        gap: 3rem;
+    }
+    
+    .itemdetail__informacion{
+        gap: 1rem;
+    }
+
+    
 }
