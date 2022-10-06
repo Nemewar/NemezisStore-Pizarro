@@ -14,7 +14,6 @@ export const ItemDetail = ({ item }) => {
     const navigate = useNavigate();
 
     const onAdd = (cantidad) => {
-        alert("Item Añadido al carrito")
         setItemAñadido(true)
         const nuevoItem = {...item,cantidad};
         addItem(nuevoItem);

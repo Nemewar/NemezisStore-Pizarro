@@ -53,13 +53,31 @@ export const CartProvider = ({ children }) => {
     }
 
     const cantidadProductos = () => {
-        return dataProducts.length;
+        return dataProducts.reduce( (total,i) => total = total + i.cantidad , 0);
+    }
+
+    const isEmpty = () => {
+        return dataProducts.length===0
+    }
+
+    const precioTotal = () => {
+        let sum = 0;
+        for(let i =0 ; i<=dataProducts.length-1;i++){
+            sum = sum + dataProducts[i].precio.split("$")[1]*dataProducts[i].cantidad;
+        }
+        return sum;
     }
     
 
     return (
         <CartContext.Provider value = {{
-            addItem, cantidadProductos, dataProducts
+            addItem, 
+            cantidadProductos, 
+            dataProducts, 
+            isEmpty, 
+            precioTotal, 
+            clear,
+            removeItem
         }}>
             {children}
         </CartContext.Provider>
