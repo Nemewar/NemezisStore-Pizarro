@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 
 
 
-import { getData, getItemsByCategory, getItemsByInputSearch } from "../../services/mockApi";
+import { getData, getItemsByCategory } from "../../services/firestore";
 import { ItemList } from "./ItemList"
 
 
@@ -13,6 +13,7 @@ export const ItemListContainer = () => {
     const [data, setData] = useState([]);
     const { cat } = useParams();
 
+    
 
     useEffect(() => {
 

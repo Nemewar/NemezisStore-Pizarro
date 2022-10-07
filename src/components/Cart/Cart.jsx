@@ -2,7 +2,6 @@ import { useContext } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import CartContext from "../context/CartContext"
 
-import { AiFillDelete } from "react-icons/ai"
 import { MdDeleteForever } from "react-icons/md"
 
 import "./cart.css"
@@ -38,7 +37,6 @@ export const Cart = () => {
             }
         }
         else {
-            console.log("Hola")
             return (
                 {
                     backgroundColor: "rgb(107, 214, 250)"
@@ -101,15 +99,16 @@ export const Cart = () => {
                                                     <td className="delete">
                                                         <MdDeleteForever
                                                             className="btn-delete"
-                                                            onClick={ () => {
+                                                            onClick={() => {
                                                                 removeItem(item)
-                                                            } }
+                                                            }}
                                                         />
                                                     </td>
                                                 </tr>
 
                                             )
-                                        })}
+                                        })
+                                        }
                                     </tbody>
                                 </table>
                                 <div className="container-resumen-cart">

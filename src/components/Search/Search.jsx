@@ -4,7 +4,7 @@ import queryString from "query-string"
 
 
 
-import { getItemsByInputSearch } from "../../services/mockApi"
+import { getItemsByInputSearch } from "../../services/firestore"
 import "./search.css"
 import { useEffect } from "react";
 import { ItemList } from "../Item/ItemList";
@@ -55,7 +55,7 @@ export const Search = () => {
                                 <p>No hay resultados para esa búsqueda</p>
                             </div>)
                             : <ItemList data={data.data} />
-                        : console.log("any")
+                        : console.log("loading...spinner")
                 }
             </div>
         </>

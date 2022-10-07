@@ -17,7 +17,7 @@ import { CartProvider } from './components/context/CartContext';
 
 function App() {
 
-
+  
   return (
     <>
       <CartProvider>
