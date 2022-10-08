@@ -12,6 +12,8 @@ import { Contacto } from './components/Contacto/Contacto';
 import { Nosotros } from './components/Nosotros/Nosotros';
 import { Cart } from './components/Cart/Cart';
 import { CartProvider } from './components/context/CartContext';
+import { Footer } from './components/Footer/Footer';
+
 
 
 
@@ -34,6 +36,7 @@ function App() {
           <Route path="/cart" element={<Cart />} />
 
         </Routes>
+        <Footer/>
       </CartProvider>
     </>
 

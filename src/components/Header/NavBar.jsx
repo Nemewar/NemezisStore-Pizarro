@@ -83,98 +83,105 @@ export const NavBar = () => {
 
   return (
     <>
-      <nav className="contenedor-nav-top">
-
-        <ul className="top">
-
-          <li className="menu">
-            <button onClick={mostrarBot}>
-              <AiOutlineMenu size={35} />
-            </button>
-          </li>
-
-          <li onClick={onReset}>
-            <Link to="/"><img src="/assets/img/logos/nemeLogo.JPG" /></Link>
-          </li>
-
-          <form
-            onSubmit={onSubmit}
-            className="top-search"
-          >
-            <input
-              name="searchText"
-              type="text"
-              placeholder="Buscar Productos"
-              autoComplete="off"
-              value={form.searchText}
-              onChange={onchangeInput}
-            />
-            <AiOutlineSearch size={30} />
-          </form>
-
-
-          <li
-            className="cart"
-            onClick={onReset}
-          >
-            <Link to="/cart">
-              <CartWidget />
-            </Link>
-          </li>
-
-          <li
-            className="user"
-            onClick={onReset}
-          >
-            <Link to="/login"><UserWidget /></Link>
-          </li>
-
-        </ul>
-      </nav>
-
-      <nav className="contenedor-nav-bot">
-
-        <div
-          ref={botRef}
-          className="bot"
-        >
-          <Link
-            to="/categoria/ps4"
-            onClick={onReset}
-          >
-            PS4</Link>
-
-          <Link
-            to="/categoria/nintendoswitch"
-            onClick={onReset}
-          >
-            NINTENDO SWITCH
-          </Link>
-
-          <Link
-            to="/categoria/xboxone"
-            onClick={onReset}
-          >
-            XBOX ONE
-          </Link>
-
-          <Link
-            to="/nosotros"
-            onClick={onReset}
-          >
-            NOSOTROS
-          </Link>
-
-          <Link
-            to="/contacto"
-            onClick={onReset}
-          >
-            CONTACTO
-          </Link>
+      <div className="contenedor-all">
+        <div className="header">
+          Mejores juegos, al mejor precio
         </div>
+        <nav className="contenedor-nav-top">
 
-      </nav>
+          <ul className="top">
 
+            <li className="menu">
+              <button onClick={mostrarBot}>
+                <AiOutlineMenu size={35} />
+              </button>
+            </li>
+
+            <li onClick={onReset}>
+              <Link to="/"><img src="/assets/img/logos/nemeLogo.JPG" /></Link>
+            </li>
+
+            <form
+              onSubmit={onSubmit}
+              className="top-search"
+            >
+              <input
+                name="searchText"
+                type="text"
+                placeholder="Buscar Productos"
+                autoComplete="off"
+                value={form.searchText}
+                onChange={onchangeInput}
+              />
+              <AiOutlineSearch size={30} />
+            </form>
+
+            <div className="li-right-top">
+              <li
+                className="cart"
+                onClick={onReset}
+              >
+                <Link to="/cart">
+                  <CartWidget />
+                </Link>
+              </li>
+
+              <li
+                className="user"
+                onClick={onReset}
+              >
+                <Link to="/login"><UserWidget /></Link>
+              </li>
+            </div>
+
+
+
+          </ul>
+        </nav>
+
+        <nav className="contenedor-nav-bot">
+
+          <div
+            ref={botRef}
+            className="bot"
+          >
+            <Link
+              to="/categoria/ps4"
+              onClick={onReset}
+            >
+              PS4</Link>
+
+            <Link
+              to="/categoria/nintendoswitch"
+              onClick={onReset}
+            >
+              NINTENDO SWITCH
+            </Link>
+
+            <Link
+              to="/categoria/xboxone"
+              onClick={onReset}
+            >
+              XBOX ONE
+            </Link>
+
+            <Link
+              to="/nosotros"
+              onClick={onReset}
+            >
+              NOSOTROS
+            </Link>
+
+            <Link
+              to="/contacto"
+              onClick={onReset}
+            >
+              CONTACTO
+            </Link>
+          </div>
+
+        </nav>
+      </div>
 
 
     </>

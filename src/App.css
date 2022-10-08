@@ -11,6 +11,14 @@ body{
     margin: 0;
 }
 
+
+/*para que el footer se quede abajo*/
+#root{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
 h1{
     text-align: center;
 }

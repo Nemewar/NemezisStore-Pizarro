@@ -12,6 +12,16 @@ span {
     white-space: nowrap;
 }
 
+.header {
+    background-color: #00bfff;
+    background-image: linear-gradient(270deg, #00bfff 0%, #115982 100%);
+    text-align: center;
+    padding: 2rem 0;
+    font-size: 3rem;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+}
 
 
 /* NAVBAR TOP // NAVBAR TOP // NAVBAR TOP // NAVBAR TOP // NAVBAR TOP // 
@@ -35,7 +45,7 @@ NAVBAR TOP // NAVBAR TOP // NAVBAR TOP // NAVBAR TOP // NAVBAR TOP // */
     max-width: 130rem;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1fr 4fr 1fr 1fr;
+    grid-template-columns: 1fr 2fr 1fr;
     align-items: center;
     gap: 2rem;
 }
@@ -55,7 +65,6 @@ NAVBAR TOP // NAVBAR TOP // NAVBAR TOP // NAVBAR TOP // NAVBAR TOP // */
 }
 
 .top-search {
-    margin-left: 5rem;
     padding: 0.2rem;
     border: 2px solid rgb(0, 191, 255);
     border-radius: 1rem;
@@ -79,6 +88,13 @@ NAVBAR TOP // NAVBAR TOP // NAVBAR TOP // NAVBAR TOP // NAVBAR TOP // */
     text-align: right;
 }
 
+.li-right-top {
+    width: 100%;
+    display: flex;
+    gap: 1rem;
+    justify-content: space-evenly;
+}
+
 /* NAVBAR BOT // NAVBAR BOT // NAVBAR BOT // NAVBAR BOT // NAVBAR BOT // 
 NAVBAR BOT // NAVBAR BOT // NAVBAR BOT // NAVBAR BOT // NAVBAR BOT // */
 
@@ -92,6 +108,7 @@ NAVBAR BOT // NAVBAR BOT // NAVBAR BOT // NAVBAR BOT // NAVBAR BOT // */
     display: flex;
     justify-content: center;
     gap: 4rem;
+
 }
 
 .bot a {
@@ -102,6 +119,7 @@ NAVBAR BOT // NAVBAR BOT // NAVBAR BOT // NAVBAR BOT // NAVBAR BOT // */
 
 .bot a:hover {
     color: rgb(0, 191, 255);
+    text-decoration: underline;
 }
 
 
@@ -117,12 +135,17 @@ MEDIA QUERIES // MEDIA QUERIES // MEDIA QUERIES // MEDIA QUERIES // MEDIA QUERIE
         display: none;
     }
 
+    .top .cart,
+    .top .user {
+        justify-content: space-between;
+    }
+
 }
 
 
 @media (max-width:768px) {
     .top {
-        grid-template-columns: auto auto auto auto;
+        grid-template-columns: auto auto auto;
         gap: 1rem;
     }
 
@@ -141,6 +164,11 @@ MEDIA QUERIES // MEDIA QUERIES // MEDIA QUERIES // MEDIA QUERIES // MEDIA QUERIE
         grid-row: 2/3;
         grid-column: 1/5;
         margin-left: 0;
+    }
+
+    .top .li-right-top {
+        grid-column: 3/5;
+        justify-content: space-around;
     }
 
     .bot {
@@ -163,6 +191,8 @@ MEDIA QUERIES // MEDIA QUERIES // MEDIA QUERIES // MEDIA QUERIES // MEDIA QUERIE
     .bot a:hover {
         background-color: #115982;
     }
+
+
 
 
 

@@ -1,6 +1,7 @@
 .itemdetail {
     display: flex;
     margin-top: 10rem;
+    margin-bottom: 10rem;
     justify-content: center;
     gap: 15rem;
     margin-right: 2rem;
