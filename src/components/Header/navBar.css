@@ -146,6 +146,9 @@ MEDIA QUERIES // MEDIA QUERIES // MEDIA QUERIES // MEDIA QUERIES // MEDIA QUERIE
 @media (max-width:768px) {
     .contenedor-nav-bot{
         background-color: unset;
+        padding: 0;
+        margin: 0;
+        border: 0;
     }
 
     .top {
@@ -175,6 +178,7 @@ MEDIA QUERIES // MEDIA QUERIES // MEDIA QUERIES // MEDIA QUERIES // MEDIA QUERIE
         justify-content: space-around;
     }
 
+   
     .bot {
         display: none;
         margin-right: 0;

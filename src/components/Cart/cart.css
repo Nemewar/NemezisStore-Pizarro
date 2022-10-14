@@ -36,12 +36,29 @@
 
 
 
+.info-cart {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+@media(max-width:925px){
+    .info-cart{
+        flex-wrap: wrap;
+        gap: 5rem;
+    }
+}
+
+
+
+
 
 
 .table-cart {
     max-width: 100%;
     border-collapse: collapse;
     border: 1px solid rgb(0, 191, 255);
+
 }
 
 .table-cart th,
@@ -102,21 +119,6 @@ tbody .btn-delete{
 
 
 
-
-
-.info-cart {
-    display: flex;
-    align-items: flex-start;
-    gap: 1rem;
-}
-
-@media(max-width:1008px){
-    .info-cart{
-        max-width: 100%;
-        flex-direction: column;
-    }
-}
-
 .container-resumen-cart {
     width: 100%;
     display: flex;
@@ -130,6 +132,7 @@ tbody .btn-delete{
 }
 
 .resumen-cart {
+    max-width: 100%;
     padding: 1rem;
     text-align: start;
     border: 1px solid #c7c7c7;
