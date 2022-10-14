@@ -52,13 +52,16 @@ export const NavBar = () => {
   const [click, setClick] = useState(false);
 
   const botRef = useRef();
+  const contRef = useRef();
 
   const mostrarBot = () => {
     const bot = botRef.current;
     if (bot.style.display === "flex") {
+      contRef.current.style.display = "none"
       bot.style.display = "none"
       setClick(false);
     } else {
+      contRef.current.style.display = "block"
       bot.style.display = "flex"
       setClick(true);
     }
@@ -69,12 +72,15 @@ export const NavBar = () => {
     let anchoWindow = window.innerWidth;
     if (anchoWindow > 768) {
       setClick(false)
+      contRef.current.style.display = "block"
       botRef.current.style.display = "flex"
     }
     else {
       if (click) {
+        contRef.current.style.display = "block"
         botRef.current.style.display = "flex"
       } else {
+        contRef.current.style.display = "none"
         botRef.current.style.display = "none"
       }
     }
@@ -139,7 +145,9 @@ export const NavBar = () => {
           </ul>
         </nav>
 
-        <nav className="contenedor-nav-bot">
+        <nav
+          ref={contRef}
+          className="contenedor-nav-bot">
 
           <div
             ref={botRef}
