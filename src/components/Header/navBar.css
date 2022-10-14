@@ -106,7 +106,6 @@ NAVBAR BOT // NAVBAR BOT // NAVBAR BOT // NAVBAR BOT // NAVBAR BOT // */
 }
 
 .bot {
-
     margin-right: 3rem;
     display: flex;
     justify-content: center;
@@ -148,6 +147,7 @@ MEDIA QUERIES // MEDIA QUERIES // MEDIA QUERIES // MEDIA QUERIES // MEDIA QUERIE
 @media (max-width:768px) {
     .contenedor-nav-bot{
         display: none;
+        padding: 0;
         background-color: unset;
     }
 
@@ -183,6 +183,7 @@ MEDIA QUERIES // MEDIA QUERIES // MEDIA QUERIES // MEDIA QUERIES // MEDIA QUERIE
         display: none;
         margin-right: 0;
         flex-direction: column;
+        justify-content: center;
         align-items: center;
         gap: 0rem;
         background-color: rgb(40, 185, 233);

@@ -57,7 +57,7 @@ export const NavBar = () => {
   const mostrarBot = () => {
     const bot = botRef.current;
     if (bot.style.display === "flex") {
-      contRef.current.style.display = "none"
+      contRef.current.style.display = "block"
       bot.style.display = "none"
       setClick(false);
     } else {
