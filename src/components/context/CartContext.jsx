@@ -42,6 +42,8 @@ export const CartProvider = ({ children }) => {
 
     }
 
+    
+
     const removeItem = (item) => {
         if (isInCart(item)) {
             setDataProducts(dataProducts.filter(it => {
@@ -60,6 +62,9 @@ export const CartProvider = ({ children }) => {
         return dataProducts.length === 0
     }
 
+
+
+    
     const precioTotal = () => {
         let sum = 0;
         for (let i = 0; i <= dataProducts.length - 1; i++) {

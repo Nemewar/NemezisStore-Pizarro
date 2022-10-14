@@ -13,13 +13,24 @@ import { Nosotros } from './components/Nosotros/Nosotros';
 import { Cart } from './components/Cart/Cart';
 import { CartProvider } from './components/context/CartContext';
 import { Footer } from './components/Footer/Footer';
+import { exportDataToFirestore } from './services/firestore';
+import { useEffect } from 'react';
 
 
 
 
 function App() {
 
-  
+
+  useEffect(() => {
+    exportDataToFirestore()
+  }, [])
+
+
+
+
+
+
   return (
     <>
       <CartProvider>
@@ -36,7 +47,7 @@ function App() {
           <Route path="/cart" element={<Cart />} />
 
         </Routes>
-        <Footer/>
+        <Footer />
       </CartProvider>
     </>
 

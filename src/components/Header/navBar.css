@@ -99,16 +99,17 @@ NAVBAR TOP // NAVBAR TOP // NAVBAR TOP // NAVBAR TOP // NAVBAR TOP // */
 NAVBAR BOT // NAVBAR BOT // NAVBAR BOT // NAVBAR BOT // NAVBAR BOT // */
 
 .contenedor-nav-bot {
+    padding: 1.5rem 0;
+    margin-top: 3rem;
     overflow: hidden;
+    background-color: #F1F1F1;
 }
 
 .bot {
     margin-right: 3rem;
-    margin-top: 3rem;
     display: flex;
     justify-content: center;
     gap: 4rem;
-
 }
 
 .bot a {
@@ -119,7 +120,6 @@ NAVBAR BOT // NAVBAR BOT // NAVBAR BOT // NAVBAR BOT // NAVBAR BOT // */
 
 .bot a:hover {
     color: rgb(0, 191, 255);
-    text-decoration: underline;
 }
 
 
@@ -144,6 +144,10 @@ MEDIA QUERIES // MEDIA QUERIES // MEDIA QUERIES // MEDIA QUERIES // MEDIA QUERIE
 
 
 @media (max-width:768px) {
+    .contenedor-nav-bot{
+        background-color: unset;
+    }
+
     .top {
         grid-template-columns: auto auto auto;
         gap: 1rem;
