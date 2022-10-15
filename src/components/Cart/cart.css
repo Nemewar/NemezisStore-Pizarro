@@ -171,16 +171,5 @@ tbody .btn-delete {
     width: 100%;
 }
 
-/*boton*/
-.swal2-styled.swal2-confirm{
-    font-size: 15px;
-}
 
-.swal2-title {
-    font-size: 25px; 
-}
-
-.swal2-html-container{
-    font-size: 20px;
-}
 

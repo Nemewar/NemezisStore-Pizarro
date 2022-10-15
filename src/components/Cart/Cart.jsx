@@ -1,9 +1,10 @@
 import { useContext } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import { MdDeleteForever} from "react-icons/md"
-import Swal from "sweetalert2"
+import Swal from 'sweetalert2'
 
 import "./cart.css"
+import "./swal.css"
 import CartContext from "../context/CartContext"
 import { createBuyOrder } from "../../services/firestore"
 
@@ -67,7 +68,7 @@ export const Cart = () => {
             Swal.fire({
                 icon: 'success',
                 title: 'Orden Generada!',
-                text: `Tu nro de orden es: ${respuesta.id}`
+                text: `Tu nro de orden es: ${respuesta.id}`,
               })
         })
         .catch( err => console.log(err))
