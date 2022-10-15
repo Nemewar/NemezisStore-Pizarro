@@ -1,11 +1,13 @@
+
+
 .search-container{
-    margin-top: 8rem;
+    margin-top: 7rem;
     margin-right: 2rem;
     margin-left: 2rem;
 }
 
 .msg-search {
-    margin: 5rem auto 5rem auto;
+    margin: 0rem auto 5rem auto;
     max-width: 130rem;
 }
 

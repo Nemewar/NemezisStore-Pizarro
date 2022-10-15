@@ -8,6 +8,7 @@ import { getItemsByInputSearch } from "../../services/firestore"
 import "./search.css"
 import { useEffect } from "react";
 import { ItemList } from "../Item/ItemList";
+import { Spinner } from "../Spinner/Spinner";
 
 
 
@@ -55,7 +56,7 @@ export const Search = () => {
                                 <p>No hay resultados para esa búsqueda</p>
                             </div>)
                             : <ItemList data={data.data} />
-                        : console.log("loading...spinner")
+                        : <Spinner/>
                 }
             </div>
         </>
