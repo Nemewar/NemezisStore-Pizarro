@@ -226,6 +226,7 @@ await setDoc( doc(miColeccion,"id213") , {
 */
 
 const exportDataToFirestore = async () => {
+    //si no existe la coleccion la crea
     const miColeccion = collection(firestore, "videojuegos");
     //la data a exportar tiene que ser un objeto
     let nData = data.map(item => {
@@ -241,8 +242,13 @@ const exportDataToFirestore = async () => {
             const newDoc = await addDoc(miColeccion, item)
         }
     }
+}
 
-
+export const createBuyOrder = async (order) => {
+    //si no existe la coleccion la crea
+    const orderColeccion = collection(firestore,"orders");
+    const newDoc = await addDoc(orderColeccion,order)
+    return newDoc;
 }
 
 

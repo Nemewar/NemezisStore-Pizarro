@@ -1,10 +1,13 @@
 import { useContext } from "react"
 import { Link, useNavigate } from "react-router-dom"
-import CartContext from "../context/CartContext"
-
-import { MdDeleteForever } from "react-icons/md"
+import { MdDeleteForever} from "react-icons/md"
+import Swal from "sweetalert2"
 
 import "./cart.css"
+import CartContext from "../context/CartContext"
+import { createBuyOrder } from "../../services/firestore"
+
+
 
 export const Cart = () => {
 
@@ -13,7 +16,9 @@ export const Cart = () => {
         precioTotal,
         cantidadProductos,
         clear,
-        removeItem } = useContext(CartContext)
+        removeItem } = useContext(CartContext);
+
+    const navigate = useNavigate();
 
     dataProducts = dataProducts.map((item, indice) => {
         return (
@@ -23,11 +28,6 @@ export const Cart = () => {
             }
         )
     })
-    const navigate = useNavigate();
-
-    const goToProducts = () => {
-        navigate("/")
-    }
 
     const styleTr = (indice) => {
 
@@ -45,6 +45,34 @@ export const Cart = () => {
 
         }
     }
+
+
+    const goToProducts = () => {
+        navigate("/")
+    }
+
+    const createOrder = () => {
+        const order = {
+            buyer: {
+                name : "frank",
+                phone: "123123",
+                email: "frank.pizarro@asdf.com"
+            },
+            items: dataProducts,
+            date: new Date(),
+            total: precioTotal()
+        }
+        createBuyOrder(order)
+        .then( respuesta => {
+            Swal.fire({
+                icon: 'success',
+                title: 'Orden Generada!',
+                text: `Tu nro de orden es: ${respuesta.id}`
+              })
+        })
+        .catch( err => console.log(err))
+    }
+    
 
     return (
         <>
@@ -118,7 +146,9 @@ export const Cart = () => {
                                         <p>Cantidad de productos: {cantidadProductos()}</p>
                                         <p>Precio total: <b className="price">${precioTotal()}</b></p>
                                         <div className="resumen-buttons">
-                                            <button className="btn-finalizar btn">
+                                            <button
+                                                onClick={createOrder}
+                                                className="btn-finalizar btn">
                                                 Finalizar compra
                                             </button>
                                             <button
