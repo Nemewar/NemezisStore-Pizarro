@@ -1,0 +1,52 @@
+.register{
+    margin-top: 4rem;
+    margin-bottom: 10rem;
+    margin-right: 2rem;
+    margin-left: 2rem;
+}
+
+.form-register{
+    max-width: 70rem;
+    margin: 0 auto;
+    font-size: 2rem;
+}
+
+.form-register fieldset{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 2rem;
+    column-gap: 4rem;
+    padding: 3rem;
+}
+
+.dge{
+    width: 90%;
+    display: flex;
+    gap: 0.5rem;
+    flex-direction: column;
+}
+
+.dge input{
+    font-size: 1.8rem;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    width: 100%;
+}
+
+.button{
+    grid-column: 2/3;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.button button{
+    padding: 1rem;
+    width: 100%;
+    background-color: rgb(0, 191, 255);
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.button button:hover{
+    color: white;
+}

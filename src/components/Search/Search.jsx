@@ -1,14 +1,14 @@
 import { useLocation } from "react-router-dom"
 import { useState } from "react";
 import queryString from "query-string"
+import { getItemsByInputSearch } from "../../services/firesotreVideojuegos";
 
 
-
-import { getItemsByInputSearch } from "../../services/firestore"
 import "./search.css"
 import { useEffect } from "react";
 import { ItemList } from "../Item/ItemList";
 import { Spinner } from "../Spinner/Spinner";
+
 
 
 

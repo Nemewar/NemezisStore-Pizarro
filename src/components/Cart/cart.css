@@ -38,7 +38,7 @@
 
 .info-cart {
     display: flex;
-    align-items: flex-start;
+    align-items: flex-start;    
     gap: 1rem;
 }
 
@@ -55,10 +55,16 @@
 
 
 .table-cart {
-    max-width: 100%;
+    width: 100%;
     border-collapse: collapse;
     border: 1px solid rgb(0, 191, 255);
+    overflow: auto;
+}
 
+@media(max-width:710px){
+    .table-cart{
+        display: block;
+    }
 }
 
 .table-cart th,

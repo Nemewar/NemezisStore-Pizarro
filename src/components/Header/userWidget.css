@@ -1,0 +1,66 @@
+.content-uw{
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.content-uw p{
+    margin: 0;
+}
+
+.content-name{
+    display: flex;
+}
+
+.content-ai{
+    font-size: 20px;
+    height: 28px;
+    display: flex;
+    align-items: flex-end;
+}
+
+.content-ai .arrowIcon{
+    color: rgb(23, 149, 191);
+    font-weight: bold;
+}
+
+.submenu{
+    background-color: gray;
+    position: absolute;
+    list-style: none;
+    margin-top: 12rem;
+    display: none;
+    padding: 0;
+    width: 163px;
+    display: flex;
+    flex-direction: column;
+}
+
+.submenu .icon{
+    display: none;
+}
+
+@media(max-width:907px){
+    .submenu{
+        width: 70px;
+        white-space: nowrap;
+    }
+    .submenu .text{
+        display: none;
+    }
+    .submenu .icon{
+        display: unset;
+    }
+}
+
+.submenu li{
+    padding: 1rem;
+}
+
+.submenu li:hover{
+    background-color: #00bfff;
+}
+
+
+

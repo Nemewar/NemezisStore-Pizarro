@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom";
-import { getSingleItem } from "../../services/firestore";
+import { getSingleItem } from "../../services/firesotreVideojuegos";
+
 import { Spinner } from "../Spinner/Spinner";
 import { ItemDetail } from "./ItemDetail";
 

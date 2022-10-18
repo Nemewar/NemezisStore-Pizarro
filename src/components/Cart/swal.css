@@ -3,6 +3,10 @@
     font-size: 15px !important;
 }
 
+.swal2-cancel.swal2-styled{
+    font-size: 15px !important;
+}
+
 .swal2-title {
     font-size: 25px !important; 
 }

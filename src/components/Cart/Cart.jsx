@@ -1,12 +1,13 @@
 import { useContext } from "react"
 import { Link, useNavigate } from "react-router-dom"
-import { MdDeleteForever} from "react-icons/md"
+import { MdDeleteForever } from "react-icons/md"
 import Swal from 'sweetalert2'
 
 import "./cart.css"
 import "./swal.css"
 import CartContext from "../context/CartContext"
 import { createBuyOrder } from "../../services/firestore"
+import { UserContext } from "../context/UserContext"
 
 
 
@@ -20,6 +21,7 @@ export const Cart = () => {
         removeItem } = useContext(CartContext);
 
     const navigate = useNavigate();
+    const { user } = useContext(UserContext);
 
     dataProducts = dataProducts.map((item, indice) => {
         return (
@@ -53,27 +55,49 @@ export const Cart = () => {
     }
 
     const createOrder = () => {
-        const order = {
-            buyer: {
-                name : "frank",
-                phone: "123123",
-                email: "frank.pizarro@asdf.com"
-            },
-            items: dataProducts,
-            date: new Date(),
-            total: precioTotal()
+        // const order = {
+        //     buyer: {
+        //         name : "frank",
+        //         phone: "123123",
+        //         email: "frank.pizarro@asdf.com"
+        //     },
+        //     items: dataProducts,
+        //     date: new Date(),
+        //     total: precioTotal()
+        // }
+        // createBuyOrder(order)
+        // .then( respuesta => {
+        //     Swal.fire({
+        //         icon: 'success',
+        //         title: 'Orden Generada!',
+        //         text: `Tu nro de orden es: ${respuesta.id}`,
+        //       })
+        // })
+        // .catch( err => console.log(err))
+        if (user.logged) {
+            navigate("/checkout")
         }
-        createBuyOrder(order)
-        .then( respuesta => {
+        else {
             Swal.fire({
-                icon: 'success',
-                title: 'Orden Generada!',
-                text: `Tu nro de orden es: ${respuesta.id}`,
-              })
-        })
-        .catch( err => console.log(err))
+                title: 'Debes iniciar sesión para seguir con la compra',
+                text: "Iniciar Sesión?",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Sí'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    navigate({
+                        pathname: "/login",
+                        search: "?of=cart"
+                    })
+                }
+            })
+        }
+
     }
-    
+
 
     return (
         <>

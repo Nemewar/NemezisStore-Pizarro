@@ -1,10 +1,11 @@
 import { useEffect } from "react";
 import { useState } from "react"
 import { useParams } from "react-router-dom";
+import { getData, getItemsByCategory } from "../../services/firesotreVideojuegos";
 
 
 
-import { getData, getItemsByCategory } from "../../services/firestore";
+
 import { Spinner } from "../Spinner/Spinner";
 import { ItemList } from "./ItemList"
 

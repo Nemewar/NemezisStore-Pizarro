@@ -1,14 +1,20 @@
-import "./navBar.css";
-import { CartWidget } from "./CartWidget";
-import { Link, useNavigate } from "react-router-dom";
-import { useState } from "react";
 
 import { AiOutlineMenu } from "react-icons/ai"
 import { AiOutlineSearch } from "react-icons/ai"
-import { UserWidget } from "./UserWidget";
+import { Link, useNavigate } from "react-router-dom";
+import { useState } from "react";
 import { useRef } from "react";
 
+
+import { UserWidget } from "./UserWidget";
+import { CartWidget } from "./CartWidget";
+
+import "./navBar.css";
+import { useContext } from "react";
+import { UserContext } from "../context/UserContext";
+
 export const NavBar = () => {
+
 
 
   const [form, setForm] = useState({
@@ -16,6 +22,7 @@ export const NavBar = () => {
   })
 
   const navigate = useNavigate();
+  const { user: usuario } = useContext(UserContext);
 
   const onchangeInput = (ev) => {
     setForm({
@@ -136,7 +143,10 @@ export const NavBar = () => {
                 className="user"
                 onClick={onReset}
               >
-                <Link to="/login"><UserWidget /></Link>
+                {(usuario.logged === false)
+                  ? <Link to="/login"><UserWidget /></Link>
+                  : <UserWidget/>
+                }
               </li>
             </div>
 

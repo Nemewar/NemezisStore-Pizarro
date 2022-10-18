@@ -12,7 +12,7 @@ export const CartWidget = () => {
     <>
       <div style={{
         display: "flex",
-        justifyContent: "center",
+        
         alignItems: "center",
         whiteSpace: "nowrap"
       }}>

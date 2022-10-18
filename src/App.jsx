@@ -13,42 +13,55 @@ import { Nosotros } from './components/Nosotros/Nosotros';
 import { Cart } from './components/Cart/Cart';
 import { CartProvider } from './components/context/CartContext';
 import { Footer } from './components/Footer/Footer';
-import { exportDataToFirestore } from './services/firestore';
+import { exportDataToFirestore, firestore, test } from './services/firestore';
 import { useEffect } from 'react';
+import { UserProvider } from './components/context/UserContext';
+import { Register } from './components/Register/Register';
+import { OrderList } from './components/Order/OrderList';
+import { Checkout } from './components/Checkout/Checkout';
+import { Order } from './components/Order/Order';
+
 
 
 
 
 function App() {
 
-
   useEffect(() => {
     exportDataToFirestore()
   }, [])
 
 
-
-
-
-
   return (
     <>
-      <CartProvider>
-        <NavBar />
-        <Routes>
-          <Route path="/" element={<ItemListContainer />} />
-          <Route path="/item/:id" element={<ItemDetailContainer />} />
-          <Route path="/categoria/:cat" element={<ItemListContainer />} />
-          <Route path="/search" element={<Search />} />
+      <UserProvider>
+        <CartProvider>
 
-          <Route path="/contacto" element={<Contacto />} />
-          <Route path="/nosotros" element={<Nosotros />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/cart" element={<Cart />} />
+          <NavBar />
+          <Routes>
+            <Route path="/" element={<ItemListContainer />} />
+            <Route path="/item/:id" element={<ItemDetailContainer />} />
+            <Route path="/categoria/:cat" element={<ItemListContainer />} />
+            <Route path="/search" element={<Search />} />
 
-        </Routes>
-        <Footer />
-      </CartProvider>
+            <Route path="/contacto" element={<Contacto />} />
+            <Route path="/nosotros" element={<Nosotros />} />
+            <Route path="/cart" element={<Cart />} />
+
+
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+
+            <Route path='/checkout' element={<Checkout />} />
+            <Route path='/account/orders' element={<OrderList />} />
+            <Route path="/account/orders/:id" element={<Order/>} />
+
+          </Routes>
+          <Footer />
+
+        </CartProvider>
+      </UserProvider>
+
     </>
 
   );

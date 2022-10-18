@@ -131,6 +131,7 @@ NAVBAR BOT // NAVBAR BOT // NAVBAR BOT // NAVBAR BOT // NAVBAR BOT // */
 MEDIA QUERIES // MEDIA QUERIES // MEDIA QUERIES // MEDIA QUERIES // MEDIA QUERIES //  */
 
 @media(max-width:907px) {
+
     .top span {
         display: none;
     }
