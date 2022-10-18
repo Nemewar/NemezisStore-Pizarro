@@ -63,6 +63,7 @@ export const Register = () => {
                         <div className='dge'>
                             <label>Nombres:</label>
                             <input
+                                required
                                 onChange={onChange}
                                 name='nombres'
                                 type="text"
@@ -73,6 +74,7 @@ export const Register = () => {
                         <div className='dge'>
                             <label>Apellidos:</label>
                             <input
+                                required
                                 onChange={onChange}
                                 name='apellidos'
                                 type="text"
@@ -83,6 +85,7 @@ export const Register = () => {
                         <div className='dge'>
                             <label>Correo:</label>
                             <input
+                                required
                                 onChange={onChange}
                                 name='correo'
                                 type="email"
@@ -93,6 +96,7 @@ export const Register = () => {
                         <div className='dge'>
                             <label>Telefono:</label>
                             <input
+                                required
                                 onChange={onChange}
                                 name='numero'
                                 type="number"
@@ -103,6 +107,7 @@ export const Register = () => {
                         <div className='dge'>
                             <label>Contraseña:</label>
                             <input
+                                required
                                 onChange={onChange}
                                 name='contraseña'
                                 type="password"
