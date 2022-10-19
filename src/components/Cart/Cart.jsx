@@ -147,7 +147,7 @@ export const Cart = () => {
                                                     </td>
                                                     <td>{item.cantidad}</td>
                                                     <td>{item.precio}</td>
-                                                    <td>{item.cantidad * parseInt(item.precio.split("$")[1])}</td>
+                                                    <td>${item.cantidad * parseInt(item.precio.split("$")[1])}</td>
                                                     <td className="delete">
                                                         <MdDeleteForever
                                                             className="btn-delete"

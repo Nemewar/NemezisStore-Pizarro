@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useContext } from 'react'
 import { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { getOrdersByUserId } from '../../services/firestoreOrdenes'
 import { UserContext } from '../context/UserContext'
 import { Spinner } from '../Spinner/Spinner'
@@ -15,6 +16,7 @@ export const OrderList = () => {
         orders: []
     })
 
+    const navigate = useNavigate();
 
     const { user: usuario } = useContext(UserContext);
 
@@ -43,6 +45,10 @@ export const OrderList = () => {
         return fecha;
     }
 
+    const goToOrder = (id) => {
+        navigate(`/account/orders/${id}`)
+    }
+
 
     return (
         <>
@@ -60,7 +66,7 @@ export const OrderList = () => {
                                 <table className='table-order' border={1}>
                                     <thead>
                                         <tr>
-                                            <th>Código del pedido</th>
+                                            <th>Código de Orden</th>
                                             <th>Fecha</th>
                                             <th>Solicitada por</th>
                                             <th>Total pedido</th>
@@ -69,7 +75,6 @@ export const OrderList = () => {
                                     </thead>
                                     <tbody>
                                         {
-
                                             (ordenes.orders.map(orden => {
                                                 return (
                                                     <tr key={orden.id}>
@@ -77,7 +82,10 @@ export const OrderList = () => {
                                                         <td>{obtenerFecha(orden.date)}</td>
                                                         <td>{usuario.user.nombres}</td>
                                                         <td>{orden.precioTotal}</td>
-                                                        <td>Ver pedido</td>
+                                                        <td
+                                                            className='goToOrder'
+                                                            onClick={() => {goToOrder(orden.id)}}
+                                                        >Ver Orden</td>
                                                     </tr>
                                                 )
                                             }))

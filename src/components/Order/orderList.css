@@ -95,5 +95,9 @@ thead th {
 
 tbody p {
     margin: 0;
-    white-space: nowrap;
+}
+
+.goToOrder:hover{
+    text-decoration: underline;
+    cursor: pointer;
 }

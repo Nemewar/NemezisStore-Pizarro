@@ -53,7 +53,8 @@
 
 
 
-
+/* se puede hacer esto solo si el padre del table-cart no es
+un display flex */
 .table-cart {
     width: 100%;
     border-collapse: collapse;
