@@ -6,7 +6,6 @@ import Swal from 'sweetalert2'
 import "./cart.css"
 import "./swal.css"
 import CartContext from "../context/CartContext"
-import { createBuyOrder } from "../../services/firestore"
 import { UserContext } from "../context/UserContext"
 
 

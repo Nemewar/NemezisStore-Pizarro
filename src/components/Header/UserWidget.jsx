@@ -18,8 +18,6 @@ export const UserWidget = () => {
     const navigate = useNavigate();
     const { user, logout } = useContext(UserContext);
     const { clear, dataProducts } = useContext(CartContext);
-    let a = "holah";
-    console.log(a.replaceAll("h","f"));
 
     const mostrarSubmenu = () => {
         if (user.logged === true) {

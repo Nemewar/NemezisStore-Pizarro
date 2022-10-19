@@ -52,7 +52,6 @@ export const getOrdersByUserId = async(usuario) => {
         for(let ordenID of ordenesID){
             ordenesCompletas=[...ordenesCompletas, await getOrderById(ordenID)]
         }
-        console.log(ordenesCompletas)
         return ordenesCompletas;
     }
 }
