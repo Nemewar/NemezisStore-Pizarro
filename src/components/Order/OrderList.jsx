@@ -69,7 +69,7 @@ export const OrderList = () => {
                                             <th>Código de Orden</th>
                                             <th>Fecha</th>
                                             <th>Solicitada por</th>
-                                            <th>Total pedido</th>
+                                            <th>Total Orden</th>
                                             <th>Accion</th>
                                         </tr>
                                     </thead>
@@ -81,7 +81,7 @@ export const OrderList = () => {
                                                         <td>{orden.id}</td>
                                                         <td>{obtenerFecha(orden.date)}</td>
                                                         <td>{usuario.user.nombres}</td>
-                                                        <td>{orden.precioTotal}</td>
+                                                        <td>${orden.precioTotal}</td>
                                                         <td
                                                             className='goToOrder'
                                                             onClick={() => {goToOrder(orden.id)}}
