@@ -1,0 +1,76 @@
+.mgc-2{
+    margin-top: 7rem;
+    margin-right: 2rem;
+    margin-left: 2rem;
+    margin-bottom: 10rem;
+    display: flex;
+    justify-content: center;
+}
+
+.contenedor-checkout{
+    max-width: 130rem;
+    margin: 0 auto;
+}
+
+.table-checkout {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid rgb(0, 191, 255);
+    overflow: scroll;
+}
+
+.contenedor-checkout .resumen{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.table-checkout th,
+.table-checkout td {
+    text-align: center;
+    border: 1px solid rgb(0, 191, 255);
+}
+
+.table-checkout td {
+    font-size: 1.8rem;
+    padding: 1rem 2rem;
+}
+
+.table-checkout thead {
+    background-color: rgb(0, 132, 176);
+    color: white;
+    font-size: 2rem;
+}
+
+thead th {
+    padding: 2rem;
+    text-align: center;
+}
+
+tbody p {
+    margin: 0;
+}
+
+.checkout-buttons{
+    margin-top: 1rem;
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+
+.checkout-buttons button{
+    max-width: 100%;
+    border: none;
+    color: white;
+    background-color: rgb(0, 132, 176);
+    font-size: 1.5rem;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all ease 0.3s;
+}
+
+.checkout-buttons button:hover{
+
+}
