@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { ToastContainer } from "react-toastify"
 
 import "./itemCount.css"
 
@@ -20,7 +21,6 @@ export const ItemCount = ({ inicial, stock, onAdd }) => {
         }
         setCount(count - 1)
     }
-
 
     return (
         <>

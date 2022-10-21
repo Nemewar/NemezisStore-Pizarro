@@ -1,14 +1,16 @@
 
 import { useContext } from "react"
-import { resolverOrden } from "../../services/firestoreOrdenes";
-import CartContext from "../context/CartContext";
 import { UserContext } from "../context/UserContext"
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { useRef } from "react";
+
+import Swal from 'sweetalert2'
+
+import CartContext from "../context/CartContext";
+import { Spinner } from "../Spinner/Spinner";
+import { resolverOrden } from "../../services/firestoreOrdenes";
 
 import "./checkout.css"
-import { Spinner } from "../Spinner/Spinner";
-import { useState } from "react";
-import { useRef } from "react";
 
 export const Checkout = () => {
 
@@ -35,9 +37,13 @@ export const Checkout = () => {
             .then(ordenId => {
                 clear();
                 navigate(`/account/orders/${ordenId}`)
+                Swal.fire(
+                    'Orden Generada!',
+                    'Se le mostrará a continuación el código y resumen de la orden',
+                    'success'
+                  )
             })
             .catch(err => console.log(err))
-        
     }
 
     return (

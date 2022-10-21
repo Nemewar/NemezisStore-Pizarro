@@ -54,25 +54,6 @@ export const Cart = () => {
     }
 
     const createOrder = () => {
-        // const order = {
-        //     buyer: {
-        //         name : "frank",
-        //         phone: "123123",
-        //         email: "frank.pizarro@asdf.com"
-        //     },
-        //     items: dataProducts,
-        //     date: new Date(),
-        //     total: precioTotal()
-        // }
-        // createBuyOrder(order)
-        // .then( respuesta => {
-        //     Swal.fire({
-        //         icon: 'success',
-        //         title: 'Orden Generada!',
-        //         text: `Tu nro de orden es: ${respuesta.id}`,
-        //       })
-        // })
-        // .catch( err => console.log(err))
         if (user.logged) {
             navigate("/checkout")
         }
