@@ -9,12 +9,7 @@ export const iniciarSesion = async (datos) => {
         const { localId: id } = userCredential.user.reloadUserInfo;
         const user = await getUser(id);
         return user;
-
     } catch (err) {
-        console.log(err)
+        throw err
     }
-}
-
-export const resolverIniciarSesion = async () => {
-
 }

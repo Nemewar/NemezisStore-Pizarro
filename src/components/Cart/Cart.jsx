@@ -7,6 +7,7 @@ import "./cart.css"
 import "./swal.css"
 import CartContext from "../context/CartContext"
 import { UserContext } from "../context/UserContext"
+import { ModalContext } from "../context/ModalContext"
 
 
 
@@ -21,6 +22,7 @@ export const Cart = () => {
 
     const navigate = useNavigate();
     const { user } = useContext(UserContext);
+    const {setModalVisible} = useContext(ModalContext);
 
     dataProducts = dataProducts.map((item, indice) => {
         return (
@@ -68,10 +70,7 @@ export const Cart = () => {
                 confirmButtonText: 'Sí'
             }).then((result) => {
                 if (result.isConfirmed) {
-                    navigate({
-                        pathname: "/login",
-                        search: "?of=cart"
-                    })
+                    setModalVisible(true)
                 }
             })
         }

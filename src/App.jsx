@@ -7,7 +7,6 @@ import { NavBar } from './components/Header/NavBar';
 import { Search } from './components/Search/Search';
 
 import './App.css';
-import { Login } from './components/Login/Login';
 import { Contacto } from './components/Contacto/Contacto';
 import { Nosotros } from './components/Nosotros/Nosotros';
 import { Cart } from './components/Cart/Cart';
@@ -52,8 +51,6 @@ function App() {
               <Route path="/nosotros" element={<Nosotros />} />
               <Route path="/cart" element={<Cart />} />
 
-
-              <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
 
               <Route path='/checkout' element={<Checkout />} />
