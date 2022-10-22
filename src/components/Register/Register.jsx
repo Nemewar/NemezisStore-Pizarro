@@ -15,8 +15,8 @@ import CartContext from '../context/CartContext'
 export const Register = () => {
 
     const navigate = useNavigate();
-    const {login} = useContext(UserContext);
-    const {dataProducts} = useContext(CartContext);
+    const { login } = useContext(UserContext);
+    const { dataProducts } = useContext(CartContext);
 
     const [datos, setDatos] = useState({
         nombres: "",
@@ -35,15 +35,16 @@ export const Register = () => {
 
     const onHandleSubmit = (ev) => {
         ev.preventDefault();
-        registrarUsuario(datos,dataProducts).then( user => {
-            login(user);
-            navigate("/")
-        })
-        .catch( err => {
-            console.log(err)
-        })
+        registrarUsuario(datos, dataProducts)
+            .then(user => {
+                login(user);
+                navigate("/")
+            })
+            .catch(err => {
+                console.log(err)
+            })
 
-        
+
 
     }
 

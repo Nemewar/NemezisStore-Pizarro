@@ -2,7 +2,7 @@ import { useContext } from "react"
 import { ModalContext } from "../context/ModalContext"
 import GoogleButton from 'react-google-button'
 import { useState } from "react"
-import { iniciarSesion } from "../../services/firestoreIniciarSesion"
+import { iniciarSesionConCorreoYContraseña, iniciarSesionConGoogle } from "../../services/firestoreIniciarSesion"
 import { UserContext } from "../context/UserContext"
 import CartContext from "../context/CartContext"
 import Swal from 'sweetalert2'
@@ -12,9 +12,10 @@ import { useNavigate } from "react-router-dom"
 
 export const Modal = () => {
 
+    
     const { modalVisible, setModalVisible } = useContext(ModalContext);
     const { login } = useContext(UserContext);
-    const { addItemsOfUserLogged } = useContext(CartContext);
+    const { addItemsOfUserLogged,dataProducts } = useContext(CartContext);
     const navigate = useNavigate();
 
     const [datos, setDatos] = useState({
@@ -36,7 +37,7 @@ export const Modal = () => {
 
     const onHandleSubmit = (ev) => {
         ev.preventDefault();
-        iniciarSesion(datos)
+        iniciarSesionConCorreoYContraseña(datos)
             .then(user => {
                 if (user) {
                     login(user)
@@ -52,6 +53,16 @@ export const Modal = () => {
                 })
             })
 
+    }
+
+    const authGoogle = () => {
+        iniciarSesionConGoogle(dataProducts)
+        .then(user => {
+            login(user)
+            addItemsOfUserLogged(user.cart)
+            setModalVisible(false)
+        })
+        .catch(err => console.log(err))
     }
 
 
@@ -109,7 +120,7 @@ export const Modal = () => {
                                         style={{
                                             width: "100%"
                                         }}
-                                        onClick={() => { console.log('Google button clicked') }}
+                                        onClick={authGoogle}
                                     />
                                 </div>
                                 <div className="not-account">

@@ -1,4 +1,5 @@
 
+import { async } from "@firebase/util";
 import { createUserWithEmailAndPassword, getAuth } from "firebase/auth";
 import { app} from "./firestore";
 import { createUser } from "./firestoreUsuarios";
@@ -24,6 +25,25 @@ export const registrarUsuario = async (datos,dataProducts) => {
         return user;
 
     } catch (err) {
+        console.log(err)
+    }
+}
+
+export const registrarUsuarioConGoogle = async(datos,dataProducts) => {
+    try{
+        let {id,...user} = datos;
+        user={
+            ...user,
+            numero: "",
+            ordenes:[
+
+            ],
+            cart: dataProducts
+        }
+        await createUser(user,id);
+        user = {...user,id};
+        return user;
+    }catch(err){
         console.log(err)
     }
 }
