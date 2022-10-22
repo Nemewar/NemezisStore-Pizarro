@@ -58,9 +58,11 @@ export const Modal = () => {
     const authGoogle = () => {
         iniciarSesionConGoogle(dataProducts)
         .then(user => {
-            login(user)
-            addItemsOfUserLogged(user.cart)
-            setModalVisible(false)
+            if (user) {
+                login(user)
+                addItemsOfUserLogged(user.cart)
+                setModalVisible(false)
+            }
         })
         .catch(err => console.log(err))
     }
