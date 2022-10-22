@@ -20,6 +20,8 @@ import { Register } from './components/Register/Register';
 import { OrderList } from './components/Order/OrderList';
 import { Checkout } from './components/Checkout/Checkout';
 import { Order } from './components/Order/Order';
+import { Modal } from './components/ModalLogin/Modal';
+import { ModalProvider } from './components/context/ModalContext';
 
 
 
@@ -34,31 +36,34 @@ function App() {
 
   return (
     <>
+
       <UserProvider>
         <CartProvider>
+          <ModalProvider>
+            <Modal />
+            <NavBar />
+            <Routes>
+              <Route path="/" element={<ItemListContainer />} />
+              <Route path="/item/:id" element={<ItemDetailContainer />} />
+              <Route path="/categoria/:cat" element={<ItemListContainer />} />
+              <Route path="/search" element={<Search />} />
 
-          <NavBar />
-          <Routes>
-            <Route path="/" element={<ItemListContainer />} />
-            <Route path="/item/:id" element={<ItemDetailContainer />} />
-            <Route path="/categoria/:cat" element={<ItemListContainer />} />
-            <Route path="/search" element={<Search />} />
-
-            <Route path="/contacto" element={<Contacto />} />
-            <Route path="/nosotros" element={<Nosotros />} />
-            <Route path="/cart" element={<Cart />} />
+              <Route path="/contacto" element={<Contacto />} />
+              <Route path="/nosotros" element={<Nosotros />} />
+              <Route path="/cart" element={<Cart />} />
 
 
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/register" element={<Register />} />
 
-            <Route path='/checkout' element={<Checkout />} />
-            <Route path='/account/orders' element={<OrderList />} />
-            <Route path="/account/orders/:id" element={<Order/>} />
+              <Route path='/checkout' element={<Checkout />} />
+              <Route path='/account/orders' element={<OrderList />} />
+              <Route path="/account/orders/:id" element={<Order />} />
 
-          </Routes>
-          <Footer />
+            </Routes>
+            <Footer />
 
+          </ModalProvider>
         </CartProvider>
       </UserProvider>
 

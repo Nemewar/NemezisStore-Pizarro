@@ -2,18 +2,25 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom"
 import { getOrderById } from "../../services/firestoreOrdenes";
+import { Spinner } from "../Spinner/Spinner";
 
 import "./order.css"
 
 export const Order = () => {
 
-    const [orden, setOrden] = useState(null)
+    const [orden, setOrden] = useState({
+        isLoading: true,
+        orden: {}
+    })
     const { id } = useParams();
 
     useEffect(() => {
         getOrderById(id)
             .then(orden => {
-                setOrden(orden)
+                setOrden({
+                    isLoading: false,
+                    orden: orden
+                })
             })
             .catch(err => console.log(err))
     }, [])
@@ -34,41 +41,43 @@ export const Order = () => {
     return (
         <>
             {
-                (orden) &&
-                <div className="o2">
-                    <div className="contenedor-order">
-                        <h2>Código de orden {orden.id}</h2>
-                        <p>{obtenerFecha(orden.date)}</p>
-                        <p>Precio Total: {orden.precioTotal}</p>
-                        <table className="table-orden">
-                            <thead>
-                                <tr>
-                                    <th>Producto</th>
-                                    <th>Cantidad</th>
-                                    <th>Precio</th>
-                                    <th>Total</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {
-                                    (orden.dataProducts.map( item => {
-                                        return(
-                                            <tr key={item.id}>
-                                                <td className="producto">
-                                                    <img src={`${item.img}`}></img>
-                                                    <p>{item.nombre}</p>
-                                                </td>
-                                                <td>{item.cantidad}</td>
-                                                <td>{item.precio}</td>
-                                                <td>${item.cantidad * parseInt(item.precio.split("$")[1])}</td>
-                                            </tr>
-                                        )
-                                    }))
-                                }
-                            </tbody>
-                        </table>
+                (orden.isLoading === false)
+                    ?
+                    <div className="o2">
+                        <div className="contenedor-order">
+                            <h2>Código de orden {orden.orden.ordenid}</h2>
+                            <p>{obtenerFecha(orden.orden.date)}</p>
+                            <p>Precio Total: {orden.orden.precioTotal}</p>
+                            <table className="table-orden">
+                                <thead>
+                                    <tr>
+                                        <th>Producto</th>
+                                        <th>Cantidad</th>
+                                        <th>Precio</th>
+                                        <th>Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {
+                                        (orden.orden.dataProducts.map(item => {
+                                            return (
+                                                <tr key={item.id}>
+                                                    <td className="producto">
+                                                        <img src={`${item.img}`}></img>
+                                                        <p>{item.nombre}</p>
+                                                    </td>
+                                                    <td>{item.cantidad}</td>
+                                                    <td>{item.precio}</td>
+                                                    <td>${item.cantidad * parseInt(item.precio.split("$")[1])}</td>
+                                                </tr>
+                                            )
+                                        }))
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
-                </div>
+                    : <Spinner/>
             }
         </>
     )

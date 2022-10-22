@@ -12,6 +12,8 @@ import { CartWidget } from "./CartWidget";
 import "./navBar.css";
 import { useContext } from "react";
 import { UserContext } from "../context/UserContext";
+import { Modal } from "../ModalLogin/Modal";
+import { ModalContext } from "../context/ModalContext";
 
 export const NavBar = () => {
 
@@ -23,6 +25,8 @@ export const NavBar = () => {
 
   const navigate = useNavigate();
   const { user: usuario } = useContext(UserContext);
+  const { setModalVisible } = useContext(ModalContext);
+  const formSeachRef = useRef();
 
   const onchangeInput = (ev) => {
     setForm({
@@ -49,7 +53,13 @@ export const NavBar = () => {
     }
   }
 
+  const onFocus = (ev) => {
+    formSeachRef.current.style.border = "3.5px solid rgb(0, 191, 255)"
+  }
 
+  const onBlur = (ev) => {
+    formSeachRef.current.style.border = "2px solid rgb(0, 191, 255)"
+  }
 
 
 
@@ -117,6 +127,7 @@ export const NavBar = () => {
             <form
               onSubmit={onSubmit}
               className="top-search"
+              ref={formSeachRef}
             >
               <input
                 name="searchText"
@@ -125,11 +136,25 @@ export const NavBar = () => {
                 autoComplete="off"
                 value={form.searchText}
                 onChange={onchangeInput}
+                onFocus={onFocus}
+                onBlur={onBlur}
               />
               <AiOutlineSearch size={30} />
             </form>
 
             <div className="li-right-top">
+
+              <li
+                className="user"
+                onClick={ () => {
+                  if(usuario.logged===false){
+                    setModalVisible(true)
+                  }
+                }}
+              >
+                <UserWidget />
+              </li>
+
               <li
                 className="cart"
                 onClick={onReset}
@@ -139,15 +164,6 @@ export const NavBar = () => {
                 </Link>
               </li>
 
-              <li
-                className="user"
-                onClick={onReset}
-              >
-                {(usuario.logged === false)
-                  ? <Link to="/login"><UserWidget /></Link>
-                  : <UserWidget/>
-                }
-              </li>
             </div>
 
 

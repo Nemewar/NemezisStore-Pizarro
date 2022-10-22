@@ -42,6 +42,16 @@ export const ItemDetail = ({ item }) => {
         navigate("/")
     }
 
+    const esNs = (categoria) => {
+        if(categoria==="nintendoswitch"){
+            let nNombre = categoria.split("o");
+            nNombre = nNombre[0] + "o "+ nNombre[1];
+            console.log(nNombre)
+            return nNombre;
+        }
+        return categoria;
+    }
+
     return (
         <>
             <div className="itemdetail">
@@ -49,7 +59,7 @@ export const ItemDetail = ({ item }) => {
                     <img src={item.img}></img>
                 </div>
                 <div className="itemdetail__informacion">
-                    <p className="itemdetail__categoria">{item.categoria}</p>
+                    <p className="itemdetail__categoria">{esNs(item.categoria)}</p>
                     <p className="itemdetail__nombre">{item.nombre}</p>
                     <p className="itemdetail__precio">{item.precio}</p>
                     <p className="itemdetail__stock">Disponible: {item.stock} unidades</p>
@@ -71,10 +81,7 @@ export const ItemDetail = ({ item }) => {
                             >Seguir comprando</button>
                         </div>
                     }
-
                     <ToastContainer />
-
-
                 </div>
             </div>
         </>

@@ -1,5 +1,6 @@
 .itemdetail__cantidad{
     font-weight: bold;
+    font-size: 2rem;
 }
 
 .itemdetail__count{
@@ -10,6 +11,7 @@
 
 .itemdetail__count p{
     margin: 0;
+    font-size: 3rem;
 }
 
 .itemdetail__count button, .goToCart{
@@ -21,12 +23,23 @@
     transition: all 0.3s ease;
 }
 
+
 .itemdetail__count button:hover, .goToCart:hover{
     background-color: black;
     color: white;
 }
 
-.goToCart{
-    max-width: 14.8rem;
+.itemdetail__count button{
+    font-size: 2rem;
 }
 
+.goToCart{
+    font-size: 2rem;
+    max-width: 20rem;
+}
+
+@media(max-width:768px){
+    .goToCart{
+        max-width: 100%;
+    }
+}
