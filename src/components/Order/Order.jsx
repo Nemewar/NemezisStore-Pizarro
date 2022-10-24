@@ -45,7 +45,7 @@ export const Order = () => {
                     ?
                     <div className="o2">
                         <div className="contenedor-order">
-                            <h2>Código de orden {orden.orden.ordenid}</h2>
+                            <h2>Código de orden {id}</h2>
                             <p>{obtenerFecha(orden.orden.date)}</p>
                             <p>Precio Total: {orden.orden.precioTotal}</p>
                             <table className="table-orden">

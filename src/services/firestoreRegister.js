@@ -25,7 +25,7 @@ export const registrarUsuario = async (datos,dataProducts) => {
         return user;
 
     } catch (err) {
-        console.log(err)
+        throw err
     }
 }
 

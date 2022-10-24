@@ -1,7 +1,5 @@
 import React from 'react'
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth"
 
-import { app } from '../../services/firestore'
 import "./register.css"
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
@@ -9,6 +7,9 @@ import { registrarUsuario } from '../../services/firestoreRegister'
 import { useContext } from 'react'
 import { UserContext } from '../context/UserContext'
 import CartContext from '../context/CartContext'
+import GoogleButton from 'react-google-button'
+import { iniciarSesionConGoogle } from '../../services/firestoreIniciarSesion'
+import Swal from 'sweetalert2'
 
 
 
@@ -16,7 +17,7 @@ export const Register = () => {
 
     const navigate = useNavigate();
     const { login } = useContext(UserContext);
-    const { dataProducts } = useContext(CartContext);
+    const { dataProducts, addItemsOfUserLogged } = useContext(CartContext);
 
     const [datos, setDatos] = useState({
         nombres: "",
@@ -37,15 +38,32 @@ export const Register = () => {
         ev.preventDefault();
         registrarUsuario(datos, dataProducts)
             .then(user => {
-                login(user);
-                navigate("/")
+                if (user) {
+                    login(user);
+                    navigate("/")
+                }
             })
             .catch(err => {
-                console.log(err)
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: `${err.code}`,
+                })
             })
+    }
 
 
 
+    const authGoogle = () => {
+        iniciarSesionConGoogle(dataProducts)
+            .then(user => {
+                if (user) {
+                    login(user)
+                    addItemsOfUserLogged(user.cart)
+                    navigate("/")
+                }
+            })
+            .catch(err => console.log(err))
     }
 
 
@@ -54,16 +72,16 @@ export const Register = () => {
     return (
         <>
             <div className="register">
-                <h1>Registrarse</h1>
-
                 <form
                     onSubmit={onHandleSubmit}
                     className="form-register"
                 >
+                    <h1>Regístrate</h1>
                     <fieldset>
                         <div className='dge'>
-                            <label>Nombres:</label>
+                            <label htmlFor='nombres'>Nombres:</label>
                             <input
+                                id='nombres'
                                 required
                                 onChange={onChange}
                                 name='nombres'
@@ -73,8 +91,9 @@ export const Register = () => {
                             />
                         </div>
                         <div className='dge'>
-                            <label>Apellidos:</label>
+                            <label htmlFor='apellidos'>Apellidos:</label>
                             <input
+                                id='apellidos'
                                 required
                                 onChange={onChange}
                                 name='apellidos'
@@ -84,8 +103,21 @@ export const Register = () => {
                             />
                         </div>
                         <div className='dge'>
-                            <label>Correo:</label>
+                            <label htmlFor='numero'>Telefono:(opcional)</label>
                             <input
+                                id='numero'
+                                min={1}
+                                onChange={onChange}
+                                name='numero'
+                                type="number"
+                                placeholder="telefono"
+                                autoComplete="off"
+                            />
+                        </div>
+                        <div className='dge'>
+                            <label htmlFor='correo'>Correo:</label>
+                            <input
+                                id='correo'
                                 required
                                 onChange={onChange}
                                 name='correo'
@@ -95,19 +127,9 @@ export const Register = () => {
                             />
                         </div>
                         <div className='dge'>
-                            <label>Telefono:</label>
+                            <label htmlFor='contraseña'>Contraseña:</label>
                             <input
-                                required
-                                onChange={onChange}
-                                name='numero'
-                                type="number"
-                                placeholder="telefono"
-                                autoComplete="off"
-                            />
-                        </div>
-                        <div className='dge'>
-                            <label>Contraseña:</label>
-                            <input
+                                id='contraseña'
                                 required
                                 onChange={onChange}
                                 name='contraseña'
@@ -116,12 +138,20 @@ export const Register = () => {
                                 autoComplete="off"
                             />
                         </div>
-                        <div className='button'>
+                        <div className='button-register'>
                             <button
                                 type='submit'
                             >
                                 Registrarme
                             </button>
+                        </div>
+                        <div className="google-option">
+                            <p>O registrarse mediante Google</p>
+                            <GoogleButton
+                                onClick={authGoogle}
+                                style={{
+                                    width: "100%"
+                                }} />
                         </div>
                     </fieldset>
 

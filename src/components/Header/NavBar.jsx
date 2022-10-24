@@ -54,7 +54,7 @@ export const NavBar = () => {
   }
 
   const onFocus = (ev) => {
-    formSeachRef.current.style.border = "3.5px solid rgb(0, 191, 255)"
+    formSeachRef.current.style.border = "3px solid rgb(0, 191, 255)"
   }
 
   const onBlur = (ev) => {

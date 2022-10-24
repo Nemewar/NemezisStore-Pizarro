@@ -1,52 +1,78 @@
-.register{
+.register {
     margin-top: 4rem;
     margin-bottom: 10rem;
     margin-right: 2rem;
     margin-left: 2rem;
 }
 
-.form-register{
-    max-width: 70rem;
+.form-register {
+    max-width: 50rem;
     margin: 0 auto;
     font-size: 2rem;
 }
 
-.form-register fieldset{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+.form-register fieldset {
+    display: flex;
+    flex-direction: column;
     row-gap: 2rem;
     column-gap: 4rem;
-    padding: 3rem;
+    padding: 5rem;
+    border-radius: 0.5rem;
 }
 
-.dge{
-    width: 90%;
+.dge {
+    width: 100%;
     display: flex;
     gap: 0.5rem;
     flex-direction: column;
 }
 
-.dge input{
+.dge label {
+    color: rgb(31, 31, 31);
+}
+
+.dge input {
     font-size: 1.8rem;
     border-radius: 0.5rem;
     padding: 1rem;
     width: 100%;
+    outline: none;
 }
 
-.button{
-    grid-column: 2/3;
+.dge input:focus {
+    box-shadow: 0 0 5px #3786da;
+    border: 1px solid #30567e;
+}
+
+.button-register {
     display: flex;
     justify-content: flex-end;
 }
 
-.button button{
-    padding: 1rem;
-    width: 100%;
-    background-color: rgb(0, 191, 255);
+.button-register button {
+    display: flex;
+    justify-content: center;
     cursor: pointer;
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.5rem;
+    border: 1px solid rgb(0, 191, 255);
+    border-radius: 0.4rem;
+    color: white;
     font-weight: bold;
+    background-color: #115982;
+    transition: 0.1s ease all;
 }
 
-.button button:hover{
-    color: white;
+.button-register button:hover {
+    background-color: rgb(0, 191, 255);
+    color: black;
+}
+
+
+.google-option {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
