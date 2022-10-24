@@ -1,4 +1,4 @@
-import { useContext } from "react"
+import { useContext, useRef } from "react"
 import { ModalContext } from "../context/ModalContext"
 import GoogleButton from 'react-google-button'
 import { useState } from "react"
@@ -9,14 +9,20 @@ import Swal from 'sweetalert2'
 
 import "./modal.css"
 import { useNavigate } from "react-router-dom"
+import { Spinner } from "../Spinner/Spinner"
+import { SpinnerButton } from "../Spinner/SpinnerButton"
 
 export const Modal = () => {
 
-    
+
     const { modalVisible, setModalVisible } = useContext(ModalContext);
     const { login } = useContext(UserContext);
-    const { addItemsOfUserLogged,dataProducts } = useContext(CartContext);
+    const { addItemsOfUserLogged, dataProducts } = useContext(CartContext);
     const navigate = useNavigate();
+    const buttonIngresarRef = useRef();
+    const buttonGoogleRef = useRef();
+    const spinnerRef = useRef();
+    const spinnerGoogleRef = useRef();
 
     const [datos, setDatos] = useState({
         correo: "",
@@ -37,6 +43,8 @@ export const Modal = () => {
 
     const onHandleSubmit = (ev) => {
         ev.preventDefault();
+        buttonIngresarRef.current.style.display = "none";
+        spinnerRef.current.style.display = "flex"
         iniciarSesionConCorreoYContraseña(datos)
             .then(user => {
                 if (user) {
@@ -46,6 +54,8 @@ export const Modal = () => {
                 }
             })
             .catch(error => {
+                buttonIngresarRef.current.style.display = "unset";
+                spinnerRef.current.style.display = "none"
                 Swal.fire({
                     icon: 'error',
                     title: 'Oops...',
@@ -55,16 +65,20 @@ export const Modal = () => {
 
     }
 
-    const authGoogle = () => {
+    const authGoogle = (ev) => {
+        buttonGoogleRef.current.style.display="none"
+        spinnerGoogleRef.current.style.display = "unset"
         iniciarSesionConGoogle(dataProducts)
-        .then(user => {
-            if (user) {
-                login(user)
-                addItemsOfUserLogged(user.cart)
-                setModalVisible(false)
-            }
-        })
-        .catch(err => console.log(err))
+            .then(user => {
+                if (user) {
+                    login(user)
+                    addItemsOfUserLogged(user.cart)
+                    ev.target.parentNode.style.display = "unset";
+                    spinnerGoogleRef.current.style.display = "none"
+                    setModalVisible(false)
+                }
+            })
+            .catch(err => console.log(err))
     }
 
 
@@ -113,17 +127,34 @@ export const Modal = () => {
                                 </div>
                                 <div>
                                     <button
+                                        ref={buttonIngresarRef}
                                         className="button"
                                     >INGRESAR</button>
+                                    <div
+                                        ref={spinnerRef}
+                                        style={{ display: "none" }}
+                                    >
+                                        <SpinnerButton />
+                                    </div>
                                 </div>
                                 <div className="init-google">
                                     <h4>O iniciar sesión con Google</h4>
-                                    <GoogleButton
-                                        style={{
-                                            width: "100%"
-                                        }}
-                                        onClick={authGoogle}
-                                    />
+                                    <div
+                                        ref={buttonGoogleRef}
+                                        style={{ width: "100%" }}>
+                                        <GoogleButton
+                                            style={{
+                                                width: "100%"
+                                            }}
+                                            onClick={authGoogle}
+                                        />
+                                    </div>
+                                    <div
+                                        ref={spinnerGoogleRef}
+                                        style={{ display: "none" }}
+                                    >
+                                        <SpinnerButton />
+                                    </div>
                                 </div>
                                 <div className="not-account">
                                     <h4>No tienes una cuenta? <span onClick={goToRegister}>Regístrate</span></h4>
