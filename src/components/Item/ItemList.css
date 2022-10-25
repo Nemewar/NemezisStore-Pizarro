@@ -8,7 +8,7 @@
     margin: 5rem auto 5rem auto;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 2rem;
+    gap: 3rem;
 }
 
 @media(max-width:785px) {
