@@ -46,12 +46,13 @@
 
 .button-register {
     display: flex;
-    justify-content: flex-end;
+    flex-direction: column;
 }
 
 .button-register button {
     display: flex;
     justify-content: center;
+    align-items: center;
     cursor: pointer;
     width: 100%;
     padding: 1rem;

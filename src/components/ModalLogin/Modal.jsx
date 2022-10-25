@@ -9,7 +9,6 @@ import Swal from 'sweetalert2'
 
 import "./modal.css"
 import { useNavigate } from "react-router-dom"
-import { Spinner } from "../Spinner/Spinner"
 import { SpinnerButton } from "../Spinner/SpinnerButton"
 
 export const Modal = () => {
@@ -73,7 +72,7 @@ export const Modal = () => {
                 if (user) {
                     login(user)
                     addItemsOfUserLogged(user.cart)
-                    ev.target.parentNode.style.display = "unset";
+                    buttonGoogleRef.current.style.display="unset"
                     spinnerGoogleRef.current.style.display = "none"
                     setModalVisible(false)
                 }

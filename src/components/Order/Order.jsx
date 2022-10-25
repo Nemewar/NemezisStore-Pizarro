@@ -45,9 +45,9 @@ export const Order = () => {
                     ?
                     <div className="o2">
                         <div className="contenedor-order">
-                            <h2>Código de orden {id}</h2>
-                            <p>{obtenerFecha(orden.orden.date)}</p>
-                            <p>Precio Total: {orden.orden.precioTotal}</p>
+                            <h2>Código de orden: <span>'{id}'</span></h2>
+                            <p>Fecha: {obtenerFecha(orden.orden.date)}</p>
+                            <p>Precio Total: <b>${orden.orden.precioTotal}</b></p>
                             <table className="table-orden">
                                 <thead>
                                     <tr>
@@ -77,7 +77,7 @@ export const Order = () => {
                             </table>
                         </div>
                     </div>
-                    : <Spinner/>
+                    : <Spinner />
             }
         </>
     )

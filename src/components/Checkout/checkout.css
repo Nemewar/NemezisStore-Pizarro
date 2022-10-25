@@ -7,6 +7,12 @@
     justify-content: center;
 }
 
+@media(max-width:768px) {
+    .mgc-2 {
+        display: unset;
+    }
+}
+
 .contenedor-checkout{
     max-width: 130rem;
     margin: 0 auto;
@@ -19,11 +25,25 @@
     overflow: scroll;
 }
 
+@media(max-width:768px) {
+    .table-checkout {
+        display: block;
+    }
+}
+
 .contenedor-checkout .resumen{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.resumen h2{
+    font-size: 3rem;
+}
+
+.resumen p{
+    font-size: 2rem;
 }
 
 .table-checkout th,
@@ -71,6 +91,3 @@ tbody p {
     transition: all ease 0.3s;
 }
 
-.checkout-buttons button:hover{
-
-}

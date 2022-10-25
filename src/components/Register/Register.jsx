@@ -10,14 +10,21 @@ import CartContext from '../context/CartContext'
 import GoogleButton from 'react-google-button'
 import { iniciarSesionConGoogle } from '../../services/firestoreIniciarSesion'
 import Swal from 'sweetalert2'
+import { useRef } from 'react'
+import { SpinnerButton } from '../Spinner/SpinnerButton'
 
 
 
 export const Register = () => {
 
+
     const navigate = useNavigate();
     const { login } = useContext(UserContext);
     const { dataProducts, addItemsOfUserLogged } = useContext(CartContext);
+    const buttonRegistrarRef = useRef();
+    const spinnerRef = useRef();
+    const buttonGoogleRef = useRef();
+    const spinnerGoogleRef = useRef();
 
     const [datos, setDatos] = useState({
         nombres: "",
@@ -36,14 +43,23 @@ export const Register = () => {
 
     const onHandleSubmit = (ev) => {
         ev.preventDefault();
+        buttonRegistrarRef.current.style.display = "none";
+        spinnerRef.current.style.display = "unset"
         registrarUsuario(datos, dataProducts)
             .then(user => {
                 if (user) {
                     login(user);
                     navigate("/")
+                    Swal.fire(
+                        'Registro exitoso!',
+                        'Ahora podra terminar sus ordenes de compra',
+                        'success'
+                    )
                 }
             })
             .catch(err => {
+                buttonRegistrarRef.current.style.display = "unset";
+                spinnerRef.current.style.display = "none"
                 Swal.fire({
                     icon: 'error',
                     title: 'Oops...',
@@ -55,11 +71,15 @@ export const Register = () => {
 
 
     const authGoogle = () => {
+        buttonGoogleRef.current.style.display = "none"
+        spinnerGoogleRef.current.style.display = "unset"
         iniciarSesionConGoogle(dataProducts)
             .then(user => {
                 if (user) {
                     login(user)
                     addItemsOfUserLogged(user.cart)
+                    buttonGoogleRef.current.style.display = "unset"
+                    spinnerGoogleRef.current.style.display = "none"
                     navigate("/")
                 }
             })
@@ -140,18 +160,36 @@ export const Register = () => {
                         </div>
                         <div className='button-register'>
                             <button
+                                ref={buttonRegistrarRef}
                                 type='submit'
                             >
                                 Registrarme
                             </button>
+                            <div
+                                ref={spinnerRef}
+                                style={{ display: "none" }}
+                            >
+                                <SpinnerButton />
+                            </div>
                         </div>
                         <div className="google-option">
                             <p>O registrarse mediante Google</p>
-                            <GoogleButton
-                                onClick={authGoogle}
-                                style={{
-                                    width: "100%"
-                                }} />
+                            <div
+                                ref={buttonGoogleRef}
+                                style={{ width: "100%" }}>
+                                <GoogleButton
+                                    style={{
+                                        width: "100%"
+                                    }}
+                                    onClick={authGoogle}
+                                />
+                            </div>
+                            <div
+                                ref={spinnerGoogleRef}
+                                style={{ display: "none" }}
+                            >
+                                <SpinnerButton />
+                            </div>
                         </div>
                     </fieldset>
 

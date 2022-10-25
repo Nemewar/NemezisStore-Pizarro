@@ -13,6 +13,14 @@
     }
 }
 
+.contenedor-order p{
+    font-size: 2rem;
+}
+
+.contenedor-order span{
+    color: rgb(0, 132, 176);
+}
+
 .table-orden {
     width: 100%;
     border-collapse: collapse;

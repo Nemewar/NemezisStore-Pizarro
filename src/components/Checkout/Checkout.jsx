@@ -41,7 +41,7 @@ export const Checkout = () => {
                     'Orden Generada!',
                     'Se le mostrará a continuación el código y resumen de la orden',
                     'success'
-                  )
+                )
             })
             .catch(err => console.log(err))
     }
@@ -57,7 +57,7 @@ export const Checkout = () => {
                     >
                         <div className="resumen">
                             <h2>Resumen de la orden</h2>
-                            <p>PRECIO TOTAL: ${precioTotal()}</p>
+                            <p>PRECIO TOTAL: <b>${precioTotal()}</b></p>
                             <p>Solicitante: {usuario.nombres + " " + usuario.apellidos}</p>
                             <p>Correo: {usuario.correo}</p>
                             <p>Numero: {usuario.numero}</p>
