@@ -26,10 +26,7 @@ export const Order = () => {
     }, [])
 
     const obtenerFecha = (date) => {
-        //el date que esta en firebase en un timestamp
-        //para convertirlo a date usar el metodo toDate()
         const newDate = date.toDate();
-        //const dateString = newDate.toDateString();
         const dia = newDate.getDate();
         const año = newDate.getFullYear();
         const mes = newDate.getMonth();

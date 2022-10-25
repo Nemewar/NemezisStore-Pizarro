@@ -211,19 +211,6 @@ const data = [
     }
 ]
 
-
-//agregar documentos a una cierta coleccion a firebase
-
-/*
-const miColeccion = collection(firestore,"videojuegos");
-//este a diferencia de adddoc, tenemos que agregarle un id
-await setDoc( doc(miColeccion,"id213") , {
-    nombre:"one",
-    apellido: "two"
-})
-*/
-
-
 const exportDataToFirestore = async () => {
     //si no existe la coleccion la crea
     const miColeccion = collection(firestore, "videojuegos");
@@ -242,15 +229,6 @@ const exportDataToFirestore = async () => {
     }
 }
 
-
-
-// export const createBuyOrder = async (order) => {
-//     //si no existe la coleccion la crea
-//     const orderColeccion = collection(firestore,"orders");
-//     //addDoc a diferencia de setDoc crea un id aleatorio
-//     const newDoc = await addDoc(orderColeccion,order)
-//     return newDoc;
-// }
 
 
 export {

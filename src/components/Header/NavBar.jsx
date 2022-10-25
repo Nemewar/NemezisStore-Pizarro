@@ -12,7 +12,6 @@ import { CartWidget } from "./CartWidget";
 import "./navBar.css";
 import { useContext } from "react";
 import { UserContext } from "../context/UserContext";
-import { Modal } from "../ModalLogin/Modal";
 import { ModalContext } from "../context/ModalContext";
 
 export const NavBar = () => {

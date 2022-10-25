@@ -29,9 +29,6 @@ export const UserWidget = () => {
         }
     }
 
-    //no modifica la cadena original
-    //replace -> solo remplaza la primera ocurrencia
-    //replaceAll -> modifica todas las ocurrencias
     const unNombre = (nombres) => {
         if(nombres.includes(" ")){
             let nombre = nombres.split(" ")[0];
@@ -44,7 +41,7 @@ export const UserWidget = () => {
 
     const onLogout = () => {
         resolverCerrarSesion(user.user, dataProducts)
-            .then(message => console.log(message))
+            .then(message => {})
 
         logout();
         clear();

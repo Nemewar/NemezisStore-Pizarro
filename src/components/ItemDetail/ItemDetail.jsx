@@ -46,7 +46,6 @@ export const ItemDetail = ({ item }) => {
         if(categoria==="nintendoswitch"){
             let nNombre = categoria.split("o");
             nNombre = nNombre[0] + "o "+ nNombre[1];
-            console.log(nNombre)
             return nNombre;
         }
         return categoria;

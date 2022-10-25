@@ -44,19 +44,13 @@ export const Search = () => {
                 <h2 className="msg-search">Resultados de la búsqueda para: {`'${q}'`}</h2>
                 <hr />
                 {
-                    // (data.length===0)
-                    //     ? <div className="msg-error">
-                    //         <p>No hay resultados para esa búsqueda</p>
-                    //     </div>
-                    //     : <ItemList data={data.data} />
-
                     (data.isLoading === false)
                         ? (data.data.length === 0)
                             ? (<div className="msg-error">
                                 <p>No hay resultados para esa búsqueda</p>
                             </div>)
                             : <ItemList data={data.data} />
-                        : <Spinner/>
+                        : <Spinner />
                 }
             </div>
         </>

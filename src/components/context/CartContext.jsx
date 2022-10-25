@@ -15,14 +15,9 @@ export const CartProvider = ({ children }) => {
         return dataProducts.some(it => it.id === item.id);
     }
 
-    //no acepta duplicados, si es que hay un item con el mismo id
-    //no agrega otro con el mismo id, si no que a ese item le aumenta la cantidad
-    //segun el item que se recibe desde el ItemDetail.jsx
     const addItem = (item = {}) => {
         if (dataProducts.length !== 0) {
-            //comprobamos para evitar duplicados
             if (isInCart(item)) {
-                //aumentamos la cantidad en vez de agregar otro item
                 const nItems = dataProducts.map(i => {
                     if (i.id === item.id) {
                         i.cantidad = i.cantidad + item.cantidad;
@@ -41,7 +36,6 @@ export const CartProvider = ({ children }) => {
 
     }
 
-    //al parecer no se puede hacer un bucle del set del state
     const addItemsOfUserLogged = (cart) => {
 
         if(dataProducts.length===0){
@@ -64,8 +58,6 @@ export const CartProvider = ({ children }) => {
         }
     }
 
-    
-
     const removeItem = (item) => {
         if (isInCart(item)) {
             setDataProducts(dataProducts.filter(it => {
@@ -84,9 +76,6 @@ export const CartProvider = ({ children }) => {
         return dataProducts.length === 0
     }
 
-
-
-    
     const precioTotal = () => {
         let sum = 0;
         for (let i = 0; i <= dataProducts.length - 1; i++) {

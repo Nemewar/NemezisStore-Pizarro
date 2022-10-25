@@ -4,7 +4,7 @@
 
 # Nemezis Store
 
-Un e-commerce de videojuegos de consolas. Construido con React y utilizando
+Una web e-commerce responsive de videojuegos de consolas. Construido con React y utilizando
 Firebase para la base de datos. Además utilicé la autenticación de usuario 
 con Firebase mediante correo y contraseña o mediante Google.
 
