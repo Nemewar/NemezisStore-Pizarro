@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useState } from "react"
 import { useParams } from "react-router-dom";
 import { getData, getItemsByCategory } from "../../services/firesotreVideojuegos";
+import { Carrusel } from "../Carrusel/Carrusel";
 
 
 
@@ -24,7 +25,7 @@ export const ItemListContainer = () => {
         if (!cat) {
             getData().then(respuestaData => {
                 setData({
-                    isLoading:false,
+                    isLoading: false,
                     data: respuestaData
                 });
             })
@@ -34,7 +35,7 @@ export const ItemListContainer = () => {
             getItemsByCategory(cat)
                 .then(items => {
                     setData({
-                        isLoading:false,
+                        isLoading: false,
                         data: items
                     })
                 })
@@ -48,9 +49,27 @@ export const ItemListContainer = () => {
     return (
         <>
             {
-                (data.isLoading===false)
-                ? <ItemList data={data.data}/>
-                : <Spinner/>
+                (!cat)
+                    ?
+                    <>
+                        {(data.isLoading === false)
+                            ?
+                            <>
+                                <Carrusel />
+                                <ItemList data={data.data} />
+                            </>
+                            :
+                            <Spinner />
+                        }
+
+                    </>
+                    :
+                    <>
+                        {(data.isLoading === false)
+                            ? <ItemList data={data.data} />
+                            : <Spinner />
+                        }
+                    </>
             }
 
         </>

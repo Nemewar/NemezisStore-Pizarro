@@ -1,0 +1,30 @@
+@media(max-width:768px){
+    .slider-container{
+        display: none;
+    }
+}
+
+.slider{
+    margin-top: 2rem;
+    background-image: url("/public/assets/img/carrusel/ps4.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 600px;
+    width: 100%;
+    animation: animate 10s infinite;
+}
+
+@keyframes animate{
+    33%{
+        background-image: url("/public/assets/img/carrusel/xbox-g55c28a1cb_1280.jpg");
+    }
+
+    66%{
+        background-image: url("/public/assets/img/carrusel/nintendo-switch-g75306f671_1280.jpg");
+    }
+
+    100%{
+        background-image: url("/public/assets/img/carrusel/ps4.jpg");
+    }
+}

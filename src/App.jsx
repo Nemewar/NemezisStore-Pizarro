@@ -12,7 +12,7 @@ import { Nosotros } from './components/Nosotros/Nosotros';
 import { Cart } from './components/Cart/Cart';
 import { CartProvider } from './components/context/CartContext';
 import { Footer } from './components/Footer/Footer';
-import { exportDataToFirestore, firestore, test } from './services/firestore';
+import { exportDataToFirestore} from './services/firestore';
 import { useEffect } from 'react';
 import { UserProvider } from './components/context/UserContext';
 import { Register } from './components/Register/Register';
@@ -21,6 +21,7 @@ import { Checkout } from './components/Checkout/Checkout';
 import { Order } from './components/Order/Order';
 import { Modal } from './components/ModalLogin/Modal';
 import { ModalProvider } from './components/context/ModalContext';
+import { Carrusel } from './components/Carrusel/Carrusel';
 
 
 
@@ -41,6 +42,7 @@ function App() {
           <ModalProvider>
             <Modal />
             <NavBar />
+
             <Routes>
               <Route path="/" element={<ItemListContainer />} />
               <Route path="/item/:id" element={<ItemDetailContainer />} />
