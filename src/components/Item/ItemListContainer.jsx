@@ -61,7 +61,6 @@ export const ItemListContainer = () => {
                             :
                             <Spinner />
                         }
-
                     </>
                     :
                     <>

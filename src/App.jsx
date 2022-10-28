@@ -21,7 +21,7 @@ import { Checkout } from './components/Checkout/Checkout';
 import { Order } from './components/Order/Order';
 import { Modal } from './components/ModalLogin/Modal';
 import { ModalProvider } from './components/context/ModalContext';
-import { Carrusel } from './components/Carrusel/Carrusel';
+
 
 
 

@@ -4,11 +4,17 @@
 }
 
 .content-items {
-    max-width: 130rem;
+    max-width: 120rem;
     margin: 5rem auto 5rem auto;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 3rem;
+}
+
+@media(min-width: 1537px){
+    .content-items{
+        max-width: 150rem;
+    }
 }
 
 @media(max-width:785px) {
