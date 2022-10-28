@@ -33,14 +33,15 @@
 .encabezado-modal h3 {
     font-weight: bold;
     margin: 0;
-    font-size: 2.5rem;
+    font-size: 3rem;
     color: #1766dc;
 }
 
 .boton-cerrar {
+    padding: 0;
     position: absolute;
-    top: 20px;
-    right: 20px;
+    top: 5px;
+    right: 5px;
     width: 30px;
     height: 30px;
     border: none;
@@ -121,4 +122,18 @@ fieldset .not-account {
 .not-account span:hover {
     text-decoration: underline;
     color: rgb(0, 191, 255);
+}
+
+
+.init-google h4{
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
+.not-account h4{
+    margin-top: 1rem;
+}
+
+.init-google h4, .not-account h4{
+    font-size: 1.7rem;
 }

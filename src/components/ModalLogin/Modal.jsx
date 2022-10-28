@@ -6,7 +6,7 @@ import { iniciarSesionConCorreoYContraseña, iniciarSesionConGoogle } from "../.
 import { UserContext } from "../context/UserContext"
 import CartContext from "../context/CartContext"
 import Swal from 'sweetalert2'
-
+import {TiDelete} from "react-icons/ti"
 import "./modal.css"
 import { useNavigate } from "react-router-dom"
 import { SpinnerButton } from "../Spinner/SpinnerButton"
@@ -96,7 +96,7 @@ export const Modal = () => {
                             className="boton-cerrar"
                             onClick={() => setModalVisible(false)}
                         >
-                            X
+                            <TiDelete size={30}/>
                         </button>
 
                         <form
