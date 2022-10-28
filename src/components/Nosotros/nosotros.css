@@ -1,0 +1,35 @@
+.cont-nos{
+    margin-top: 5rem;
+    margin-bottom: 10rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+
+.cont-nos h1{
+    margin-bottom: 5rem;
+}
+
+.contenedor-nosotros{
+    max-width: 120rem;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+}
+
+@media(max-width:768px){
+    .contenedor-nosotros{
+        grid-template-columns: 1fr;
+    }
+}
+
+.contenedor-nosotros p{
+    font-size: 2rem;
+    line-height: 2;
+}
+
+
+.contenedor-nosotros .img{
+    border-radius: 0.5rem;
+    max-width: 100%;
+}
