@@ -55,6 +55,7 @@ export const Register = () => {
                         'Ahora podra terminar sus ordenes de compra',
                         'success'
                     )
+                    ev.target.reset()
                 }
             })
             .catch(err => {
@@ -65,7 +66,9 @@ export const Register = () => {
                     title: 'Oops...',
                     text: `${err.code}`,
                 })
+                ev.target.reset()
             })
+
     }
 
 

@@ -6,7 +6,7 @@ import { iniciarSesionConCorreoYContraseña, iniciarSesionConGoogle } from "../.
 import { UserContext } from "../context/UserContext"
 import CartContext from "../context/CartContext"
 import Swal from 'sweetalert2'
-import {TiDelete} from "react-icons/ti"
+import { TiDelete } from "react-icons/ti"
 import "./modal.css"
 import { useNavigate } from "react-router-dom"
 import { SpinnerButton } from "../Spinner/SpinnerButton"
@@ -51,6 +51,7 @@ export const Modal = () => {
                     addItemsOfUserLogged(user.cart)
                     setModalVisible(false)
                 }
+                ev.target.reset()
             })
             .catch(error => {
                 buttonIngresarRef.current.style.display = "unset";
@@ -60,19 +61,20 @@ export const Modal = () => {
                     title: 'Oops...',
                     text: `${error.code}`,
                 })
+                ev.target.reset()
             })
 
     }
 
     const authGoogle = (ev) => {
-        buttonGoogleRef.current.style.display="none"
+        buttonGoogleRef.current.style.display = "none"
         spinnerGoogleRef.current.style.display = "unset"
         iniciarSesionConGoogle(dataProducts)
             .then(user => {
                 if (user) {
                     login(user)
                     addItemsOfUserLogged(user.cart)
-                    buttonGoogleRef.current.style.display="unset"
+                    buttonGoogleRef.current.style.display = "unset"
                     spinnerGoogleRef.current.style.display = "none"
                     setModalVisible(false)
                 }
@@ -96,7 +98,7 @@ export const Modal = () => {
                             className="boton-cerrar"
                             onClick={() => setModalVisible(false)}
                         >
-                            <TiDelete size={30}/>
+                            <TiDelete size={30} />
                         </button>
 
                         <form
