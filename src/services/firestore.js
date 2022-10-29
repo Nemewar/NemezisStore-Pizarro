@@ -29,7 +29,7 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-//para realiza operaciones con la bd
+//para realiza operacione con la bd
 const firestore = getFirestore(app);
 
 
