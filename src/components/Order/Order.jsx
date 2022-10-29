@@ -23,7 +23,7 @@ export const Order = () => {
                 })
             })
             .catch(err => console.log(err))
-    }, [])
+    }, [id])
 
     const obtenerFecha = (date) => {
         const newDate = date.toDate();
@@ -60,7 +60,7 @@ export const Order = () => {
                                             return (
                                                 <tr key={item.id}>
                                                     <td className="producto">
-                                                        <img src={`${item.img}`}></img>
+                                                        <img src={`${item.img}`} alt="imgItem"/>
                                                         <p>{item.nombre}</p>
                                                     </td>
                                                     <td>{item.cantidad}</td>

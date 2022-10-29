@@ -50,9 +50,9 @@ export const getOrders = async (id) => {
 
 export const resolverCerrarSesion = async (user, dataProducts) => {
     const auth = getAuth(app);
-    const message = await updateUser({
+    await updateUser({
         cart: dataProducts
     }, user.id)
-    const res = await signOut(auth);
+    await signOut(auth);
     return "Usuario deslogeado"
 }

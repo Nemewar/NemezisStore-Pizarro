@@ -60,11 +60,7 @@ export const CartProvider = ({ children }) => {
 
     const removeItem = (item) => {
         if (isInCart(item)) {
-            setDataProducts(dataProducts.filter(it => {
-                if (it.id !== item.id) {
-                    return it;
-                }
-            }))
+            setDataProducts(dataProducts.filter(it => it.id !== item.id))
         }
     }
 

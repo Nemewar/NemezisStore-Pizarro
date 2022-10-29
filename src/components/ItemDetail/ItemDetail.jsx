@@ -55,7 +55,7 @@ export const ItemDetail = ({ item }) => {
         <>
             <div className="itemdetail">
                 <div className="itemdetail__imagen">
-                    <img src={item.img}></img>
+                    <img src={item.img} alt="itemImg"/>
                 </div>
                 <div className="itemdetail__informacion">
                     <p className="itemdetail__categoria">{esNs(item.categoria)}</p>

@@ -31,7 +31,7 @@ export const OrderList = () => {
             .catch(err => console.log(err))
 
 
-    }, [])
+    }, [usuario.user])
 
     const obtenerFecha = (date) => {
         const newDate = date.toDate();

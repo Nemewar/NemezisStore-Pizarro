@@ -121,7 +121,7 @@ export const Cart = () => {
                                                 >
                                                     <td className="producto">
                                                         <Link to={`/item/${item.id}`}>
-                                                            <img src={`${item.img}`}></img>
+                                                            <img src={`${item.img}`} alt="itemImg"/>
                                                         </Link>
                                                         <p>{item.nombre}</p>
                                                     </td>

@@ -60,7 +60,8 @@ export const Checkout = () => {
                             <p>PRECIO TOTAL: <b>${precioTotal()}</b></p>
                             <p>Solicitante: {usuario.nombres + " " + usuario.apellidos}</p>
                             <p>Correo: {usuario.correo}</p>
-                            <p>Numero: {usuario.numero}</p>
+                            {(usuario.numero) && <p>Numero: {usuario.numero}</p>}
+
                         </div>
                         <h2>Productos: </h2>
                         <table className="table-checkout" border={1}>
@@ -78,7 +79,7 @@ export const Checkout = () => {
                                         return (
                                             <tr key={item.id}>
                                                 <td className="producto">
-                                                    <img src={`${item.img}`}></img>
+                                                    <img src={`${item.img}`} alt="itemImg" />
                                                     <p>{item.nombre}</p>
                                                 </td>
                                                 <td>{item.cantidad}</td>

@@ -18,7 +18,7 @@ export const Item = ({ nombre, precio, stock, categoria, img, id }) => {
         <>
             <div className="contenedor-item">
                 <div className="item">
-                    <Link to={`/item/${id}`}><img src={img} /></Link>
+                    <Link to={`/item/${id}`}><img src={img} alt="itemImg"/></Link>
                     <Link to={`/item/${id}`}><p className='nombre'>{nombre}</p></Link>
                     <p className='precio'>{precio}</p>
                 </div>

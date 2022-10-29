@@ -1,4 +1,4 @@
-import { getAuth, GoogleAuthProvider, signInWithEmailAndPassword, signInWithPopup, signInWithRedirect } from "firebase/auth";
+import { getAuth, GoogleAuthProvider, signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
 import { app } from "./firestore";
 import { registrarUsuarioConGoogle } from "./firestoreRegister";
 import { existUser, getUser } from "./firestoreUsuarios";
@@ -44,8 +44,8 @@ export const iniciarSesionConGoogle = async (dataProducts) => {
         const auth = getAuth(app);
         const provider = new GoogleAuthProvider();
         const result = await signInWithPopup(auth, provider);
-        const credential = GoogleAuthProvider.credentialFromResult(result)
-        const token = credential.accessToken;
+        //const credential = GoogleAuthProvider.credentialFromResult(result)
+        //const token = credential.accessToken;
         const user = result.user
         const { localId: id, displayName, email: correo } = user.reloadUserInfo;
         const existeUsuario = await existUser(id);
@@ -59,9 +59,10 @@ export const iniciarSesionConGoogle = async (dataProducts) => {
             return nUser;
         }
     } catch (err) {
-        const errorCode = err.code;
-        const errorMessage = err.errorMessage;
-        //const email = err.customData.email;
-        const credential = GoogleAuthProvider.credentialFromError(err);
+        // const errorCode = err.code;
+        // const errorMessage = err.errorMessage;
+        // //const email = err.customData.email;
+        // const credential = GoogleAuthProvider.credentialFromError(err);
+        throw err
     }
 }
