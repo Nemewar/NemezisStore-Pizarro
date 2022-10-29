@@ -1,7 +1,6 @@
 import React from 'react'
 
 import "./register.css"
-import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { registrarUsuario } from '../../services/firestoreRegister'
 import { useContext } from 'react'
@@ -12,6 +11,7 @@ import { iniciarSesionConGoogle } from '../../services/firestoreIniciarSesion'
 import Swal from 'sweetalert2'
 import { useRef } from 'react'
 import { SpinnerButton } from '../Spinner/SpinnerButton'
+import { useForm } from '../../hooks/useForm'
 
 
 
@@ -26,26 +26,21 @@ export const Register = () => {
     const buttonGoogleRef = useRef();
     const spinnerGoogleRef = useRef();
 
-    const [datos, setDatos] = useState({
+    const { nombres, apellidos, correo, numero, 
+        contraseña,formState,onFormState, onReset } = useForm({
         nombres: "",
         apellidos: "",
         correo: "",
         numero: "",
-        contraseña: "",
+        contraseña: ""
     })
 
-    const onChange = (ev) => {
-        setDatos({
-            ...datos,
-            [ev.target.name]: ev.target.value
-        })
-    }
 
     const onHandleSubmit = (ev) => {
         ev.preventDefault();
         buttonRegistrarRef.current.style.display = "none";
         spinnerRef.current.style.display = "unset"
-        registrarUsuario(datos, dataProducts)
+        registrarUsuario(formState, dataProducts)
             .then(user => {
                 if (user) {
                     login(user);
@@ -55,7 +50,7 @@ export const Register = () => {
                         'Ahora podra terminar sus ordenes de compra',
                         'success'
                     )
-                    ev.target.reset()
+                    onReset()
                 }
             })
             .catch(err => {
@@ -66,7 +61,7 @@ export const Register = () => {
                     title: 'Oops...',
                     text: `${err.code}`,
                 })
-                ev.target.reset()
+                onReset();
             })
 
     }
@@ -106,7 +101,8 @@ export const Register = () => {
                             <input
                                 id='nombres'
                                 required
-                                onChange={onChange}
+                                onChange={onFormState}
+                                value={nombres}
                                 name='nombres'
                                 type="text"
                                 placeholder="nombres"
@@ -118,7 +114,8 @@ export const Register = () => {
                             <input
                                 id='apellidos'
                                 required
-                                onChange={onChange}
+                                onChange={onFormState}
+                                value={apellidos}
                                 name='apellidos'
                                 type="text"
                                 placeholder="apellidos"
@@ -130,7 +127,8 @@ export const Register = () => {
                             <input
                                 id='numero'
                                 min={1}
-                                onChange={onChange}
+                                onChange={onFormState}
+                                value={numero}
                                 name='numero'
                                 type="number"
                                 placeholder="telefono"
@@ -142,7 +140,8 @@ export const Register = () => {
                             <input
                                 id='correo'
                                 required
-                                onChange={onChange}
+                                onChange={onFormState}
+                                value={correo}
                                 name='correo'
                                 type="email"
                                 placeholder="correo"
@@ -154,7 +153,8 @@ export const Register = () => {
                             <input
                                 id='contraseña'
                                 required
-                                onChange={onChange}
+                                onChange={onFormState}
+                                value={contraseña}
                                 name='contraseña'
                                 type="password"
                                 placeholder="contraseña"

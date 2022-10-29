@@ -13,51 +13,37 @@ import "./navBar.css";
 import { useContext } from "react";
 import { UserContext } from "../context/UserContext";
 import { ModalContext } from "../context/ModalContext";
+import { useForm } from "../../hooks/useForm";
 
 export const NavBar = () => {
 
-
-
-  const [form, setForm] = useState({
+  const { searchText, onFormState, onReset } = useForm({
     searchText: ""
   })
 
   const navigate = useNavigate();
   const { user: usuario } = useContext(UserContext);
   const { setModalVisible } = useContext(ModalContext);
-  const formSeachRef = useRef();
+  const formSearchRef = useRef();
 
-  const onchangeInput = (ev) => {
-    setForm({
-      ...form,
-      [ev.target.name]: ev.target.value
-    })
-  }
-
-  const onReset = () => {
-    setForm({
-      ...form,
-      searchText: ""
-    })
-  }
 
   const onSubmit = (ev) => {
     ev.preventDefault()
-    if (form.searchText.length !== 0) {
+    if (searchText.length !== 0) {
       navigate({
         pathname: "/search",
-        search: `?q=${form.searchText}`
+        search: `?q=${searchText}`
       })
       onReset()
     }
   }
 
   const onFocus = (ev) => {
-    formSeachRef.current.style.border = "3px solid rgb(0, 191, 255)"
+    formSearchRef.current.style.border = "3px solid rgb(0, 191, 255)"
   }
 
   const onBlur = (ev) => {
-    formSeachRef.current.style.border = "2px solid rgb(0, 191, 255)"
+    formSearchRef.current.style.border = "2px solid rgb(0, 191, 255)"
   }
 
 
@@ -66,7 +52,6 @@ export const NavBar = () => {
   //para desaparecer el navbar top, al ampliar la imagen
   //el navbar top sigue oculto y no se puede aggrandar
   const [click, setClick] = useState(false);
-
   const botRef = useRef();
   const contRef = useRef();
 
@@ -84,7 +69,6 @@ export const NavBar = () => {
   }
 
   window.addEventListener("resize", () => {
-    //let ancho = document.documentElement.clientWidth;
     let anchoWindow = window.innerWidth;
     if (anchoWindow > 768) {
       setClick(false)
@@ -110,7 +94,6 @@ export const NavBar = () => {
           Mejores juegos, al mejor precio
         </div>
         <nav className="contenedor-nav-top">
-
           <ul className="top">
 
             <li className="menu">
@@ -126,15 +109,15 @@ export const NavBar = () => {
             <form
               onSubmit={onSubmit}
               className="top-search"
-              ref={formSeachRef}
+              ref={formSearchRef}
             >
               <input
                 name="searchText"
                 type="text"
                 placeholder="Buscar Productos"
                 autoComplete="off"
-                value={form.searchText}
-                onChange={onchangeInput}
+                value={searchText}
+                onChange={onFormState}
                 onFocus={onFocus}
                 onBlur={onBlur}
               />
@@ -145,8 +128,8 @@ export const NavBar = () => {
 
               <li
                 className="user"
-                onClick={ () => {
-                  if(usuario.logged===false){
+                onClick={() => {
+                  if (usuario.logged === false) {
                     setModalVisible(true)
                   }
                 }}
@@ -164,8 +147,6 @@ export const NavBar = () => {
               </li>
 
             </div>
-
-
 
           </ul>
         </nav>

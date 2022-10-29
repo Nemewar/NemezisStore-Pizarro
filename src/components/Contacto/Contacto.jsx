@@ -1,10 +1,11 @@
-import { useState } from "react"
 import "./contacto.css"
 import Swal from 'sweetalert2'
+import { useForm } from "../../hooks/useForm"
 
 export const Contacto = () => {
 
-    const [form, setForm] = useState({
+
+    const { nombres, telefono, correo, mensaje, onFormState, onReset } = useForm({
         nombres: "",
         telefono: "",
         correo: "",
@@ -18,19 +19,7 @@ export const Contacto = () => {
             '',
             'success'
         )
-        setForm({
-            nombres: "",
-            telefono: "",
-            correo: "",
-            mensaje: ""
-        })
-    }
-
-    const onHandleChange = (ev) => {
-        setForm({
-            ...form,
-            [ev.target.name]: ev.target.value
-        })
+        onReset()
     }
 
     return (
@@ -51,8 +40,8 @@ export const Contacto = () => {
                             <input
                                 type="text"
                                 name="nombres"
-                                value={form.nombres}
-                                onChange={onHandleChange}
+                                value={nombres}
+                                onChange={onFormState}
                                 required
                             />
                         </div>
@@ -62,8 +51,8 @@ export const Contacto = () => {
                                 type="number"
                                 min={1}
                                 name="telefono"
-                                value={form.telefono}
-                                onChange={onHandleChange}
+                                value={telefono}
+                                onChange={onFormState}
                                 required
                             />
                         </div>
@@ -72,8 +61,8 @@ export const Contacto = () => {
                             <input
                                 type="email"
                                 name="correo"
-                                value={form.correo}
-                                onChange={onHandleChange}
+                                value={correo}
+                                onChange={onFormState}
                                 required
                             />
                         </div>
@@ -81,8 +70,8 @@ export const Contacto = () => {
                             <label>Mensaje</label>
                             <textarea
                                 name="mensaje"
-                                value={form.mensaje}
-                                onChange={onHandleChange}
+                                value={mensaje}
+                                onChange={onFormState}
                                 required
                             >
 

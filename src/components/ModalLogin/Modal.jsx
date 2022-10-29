@@ -1,7 +1,6 @@
 import { useContext, useRef } from "react"
 import { ModalContext } from "../context/ModalContext"
 import GoogleButton from 'react-google-button'
-import { useState } from "react"
 import { iniciarSesionConCorreoYContraseña, iniciarSesionConGoogle } from "../../services/firestoreIniciarSesion"
 import { UserContext } from "../context/UserContext"
 import CartContext from "../context/CartContext"
@@ -10,6 +9,7 @@ import { TiDelete } from "react-icons/ti"
 import "./modal.css"
 import { useNavigate } from "react-router-dom"
 import { SpinnerButton } from "../Spinner/SpinnerButton"
+import { useForm } from "../../hooks/useForm"
 
 export const Modal = () => {
 
@@ -23,7 +23,7 @@ export const Modal = () => {
     const spinnerRef = useRef();
     const spinnerGoogleRef = useRef();
 
-    const [datos, setDatos] = useState({
+    const {correo,contraseña,formState,onFormState,onReset} = useForm({
         correo: "",
         contraseña: ""
     })
@@ -33,25 +33,18 @@ export const Modal = () => {
         setModalVisible(false)
     }
 
-    const onHandleChange = (ev) => {
-        setDatos({
-            ...datos,
-            [ev.target.name]: ev.target.value
-        })
-    }
-
     const onHandleSubmit = (ev) => {
         ev.preventDefault();
         buttonIngresarRef.current.style.display = "none";
         spinnerRef.current.style.display = "flex"
-        iniciarSesionConCorreoYContraseña(datos)
+        iniciarSesionConCorreoYContraseña(formState)
             .then(user => {
                 if (user) {
                     login(user)
                     addItemsOfUserLogged(user.cart)
                     setModalVisible(false)
                 }
-                ev.target.reset()
+                onReset()
             })
             .catch(error => {
                 buttonIngresarRef.current.style.display = "unset";
@@ -61,12 +54,12 @@ export const Modal = () => {
                     title: 'Oops...',
                     text: `${error.code}`,
                 })
-                ev.target.reset()
+                onReset()
             })
 
     }
 
-    const authGoogle = (ev) => {
+    const authGoogle = () => {
         buttonGoogleRef.current.style.display = "none"
         spinnerGoogleRef.current.style.display = "unset"
         iniciarSesionConGoogle(dataProducts)
@@ -109,8 +102,9 @@ export const Modal = () => {
                                 <div>
                                     <input
                                         required
-                                        onChange={onHandleChange}
+                                        onChange={onFormState}
                                         name="correo"
+                                        value={correo}
                                         className="input"
                                         type="text"
                                         placeholder="Correo"
@@ -119,8 +113,9 @@ export const Modal = () => {
                                 <div>
                                     <input
                                         required
-                                        onChange={onHandleChange}
+                                        onChange={onFormState}
                                         name="contraseña"
+                                        value={contraseña}
                                         className="input"
                                         type="password"
                                         placeholder="Contraseña"
