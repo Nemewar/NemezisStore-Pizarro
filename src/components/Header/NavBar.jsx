@@ -103,7 +103,7 @@ export const NavBar = () => {
             </li>
 
             <li onClick={onReset}>
-              <Link to="/"><img src="/assets/img/logos/nemeLogo.JPG" /></Link>
+              <Link to="/"><img src="/assets/img/logos/nemeLogo.JPG" alt="logo"/></Link>
             </li>
 
             <form
