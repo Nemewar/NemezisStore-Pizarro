@@ -30,8 +30,6 @@ export const existUser = async (id) => {
     }
 }
 
-
-
 export const createUser = async (user, id) => {
     const usuariosColleccion = collection(firestore, "usuarios")
     await setDoc(doc(usuariosColleccion, id), user)
