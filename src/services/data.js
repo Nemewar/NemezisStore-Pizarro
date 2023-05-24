@@ -5,7 +5,7 @@ export const data = [
         precio: "$30",
         stock: 5,
         categoria: "ps4",
-        img: "/assets/img/items/ps4/ctr.JPG"
+        img: "https://res.cloudinary.com/dzsqibrvh/image/upload/v1684896582/Nemezis/ps4/ctr_n0cqqq.jpg"
     },
     {
         id: 2,
@@ -13,7 +13,7 @@ export const data = [
         precio: "$35",
         stock: 4,
         categoria: "ps4",
-        img: "/assets/img/items/ps4/ghostoftsushima.JPG"
+        img: "https://res.cloudinary.com/dzsqibrvh/image/upload/v1684896582/Nemezis/ps4/ghostoftsushima_hihthy.jpg"
     },
     {
         id: 3,
@@ -21,7 +21,7 @@ export const data = [
         precio: "$30",
         stock: 5,
         categoria: "ps4",
-        img: "/assets/img/items/ps4/GOW.JPG"
+        img: "https://res.cloudinary.com/dzsqibrvh/image/upload/v1684896582/Nemezis/ps4/GOW_tsxp9r.jpg"
     },
     {
         id: 4,
@@ -29,7 +29,7 @@ export const data = [
         precio: "$30",
         stock: 5,
         categoria: "ps4",
-        img: "/assets/img/items/ps4/GTAVps4.JPG"
+        img: "https://res.cloudinary.com/dzsqibrvh/image/upload/v1684896582/Nemezis/ps4/GTAVps4_obp0om.jpg"
     },
     {
         id: 5,
@@ -37,7 +37,7 @@ export const data = [
         precio: "$30",
         stock: 5,
         categoria: "ps4",
-        img: "/assets/img/items/ps4/HORIZON.JPG"
+        img: "https://res.cloudinary.com/dzsqibrvh/image/upload/v1684896582/Nemezis/ps4/horizon_qyfjhc.jpg"
     },
     {
         id: 6,
@@ -45,7 +45,7 @@ export const data = [
         precio: "$30",
         stock: 5,
         categoria: "ps4",
-        img: "/assets/img/items/ps4/ReVillage.JPG"
+        img: "https://res.cloudinary.com/dzsqibrvh/image/upload/v1684896582/Nemezis/ps4/ReVillage_qfcscp.jpg"
     },
     {
         id: 7,
@@ -53,7 +53,7 @@ export const data = [
         precio: "$30",
         stock: 5,
         categoria: "ps4",
-        img: "/assets/img/items/ps4/spiderman.JPG"
+        img: "https://res.cloudinary.com/dzsqibrvh/image/upload/v1684896581/Nemezis/ps4/spiderman_hs0mtp.jpg"
     },
     {
         id: 8,
@@ -61,7 +61,7 @@ export const data = [
         precio: "$30",
         stock: 5,
         categoria: "ps4",
-        img: "/assets/img/items/ps4/tekken.JPG"
+        img: "https://res.cloudinary.com/dzsqibrvh/image/upload/v1684896582/Nemezis/ps4/tekken_kzf8pb.jpg"
     },
     {
         id: 9,
@@ -69,7 +69,7 @@ export const data = [
         precio: "$30",
         stock: 5,
         categoria: "ps4",
-        img: "/assets/img/items/ps4/THLUS1.JPG"
+        img: "https://res.cloudinary.com/dzsqibrvh/image/upload/v1684896582/Nemezis/ps4/THLUS1_rtwli5.jpg"
     },
     {
         id: 10,
@@ -77,7 +77,7 @@ export const data = [
         precio: "$30",
         stock: 5,
         categoria: "ps4",
-        img: "/assets/img/items/ps4/THLUS2.JPG"
+        img: "https://res.cloudinary.com/dzsqibrvh/image/upload/v1684896582/Nemezis/ps4/THLUS2_auyzjr.jpg"
     },
     {
         id: 11,
@@ -85,7 +85,7 @@ export const data = [
         precio: "$41",
         stock: 5,
         categoria: "xboxone",
-        img: "/assets/img/items/xboxone/call of duty black ops cold war.jpg"
+        img: "https://res.cloudinary.com/dzsqibrvh/image/upload/v1684896615/Nemezis/xboxone/call_of_duty_black_ops_cold_war_ebcuwz.jpg"
     },
     {
         id: 12,
@@ -93,7 +93,7 @@ export const data = [
         precio: "$9",
         stock: 5,
         categoria: "xboxone",
-        img: "/assets/img/items/xboxone/Fallout76.jpg"
+        img: "https://res.cloudinary.com/dzsqibrvh/image/upload/v1684896615/Nemezis/xboxone/Fallout76_hnqo48.jpg"
     },
     {
         id: 13,
@@ -101,7 +101,7 @@ export const data = [
         precio: "$11",
         stock: 5,
         categoria: "xboxone",
-        img: "/assets/img/items/xboxone/fifa21.jpg"
+        img: "https://res.cloudinary.com/dzsqibrvh/image/upload/v1684896615/Nemezis/xboxone/fifa21_qh9nll.jpg"
     },
     {
         id: 14,
@@ -109,7 +109,7 @@ export const data = [
         precio: "$22",
         stock: 5,
         categoria: "xboxone",
-        img: "/assets/img/items/xboxone/forzahorizon4.jpg"
+        img: "https://res.cloudinary.com/dzsqibrvh/image/upload/v1684896616/Nemezis/xboxone/forzahorizon4_tslwrx.jpg"
     },
     {
         id: 15,
@@ -117,7 +117,7 @@ export const data = [
         precio: "$20",
         stock: 5,
         categoria: "xboxone",
-        img: "/assets/img/items/xboxone/GTAVxbox.jpg"
+        img: "https://res.cloudinary.com/dzsqibrvh/image/upload/v1684896616/Nemezis/xboxone/GTAVxbox_dz6t76.jpg"
     },
     {
         id: 16,
@@ -125,7 +125,7 @@ export const data = [
         precio: "$14",
         stock: 5,
         categoria: "xboxone",
-        img: "/assets/img/items/xboxone/metroexodus.jpg"
+        img: "https://res.cloudinary.com/dzsqibrvh/image/upload/v1684896616/Nemezis/xboxone/metroexodus_utrrja.jpg"
     },
     {
         id: 17,
@@ -133,7 +133,7 @@ export const data = [
         precio: "$29",
         stock: 5,
         categoria: "xboxone",
-        img: "/assets/img/items/xboxone/readdeadredemption.jpg"
+        img: "https://res.cloudinary.com/dzsqibrvh/image/upload/v1684896616/Nemezis/xboxone/readdeadredemption_djdgqo.jpg"
     },
     {
         id: 18,
@@ -141,7 +141,7 @@ export const data = [
         precio: "$19",
         stock: 5,
         categoria: "nintendoswitch",
-        img: "/assets/img/items/nintendoswitch/justdance2022.jpg"
+        img: "https://res.cloudinary.com/dzsqibrvh/image/upload/v1684896538/Nemezis/nintendoswitch/justdance2022_ooechr.jpg"
     },
     {
         id: 19,
@@ -149,7 +149,7 @@ export const data = [
         precio: "$15",
         stock: 5,
         categoria: "nintendoswitch",
-        img: "/assets/img/items/nintendoswitch/minecraft.jpg"
+        img: "https://res.cloudinary.com/dzsqibrvh/image/upload/v1684896543/Nemezis/nintendoswitch/minecraft_mgctph.jpg"
     },
     {
         id: 20,
@@ -157,7 +157,7 @@ export const data = [
         precio: "$50",
         stock: 5,
         categoria: "nintendoswitch",
-        img: "/assets/img/items/nintendoswitch/pokemonlegendsarkeus.jpg"
+        img: "https://res.cloudinary.com/dzsqibrvh/image/upload/v1684896548/Nemezis/nintendoswitch/pokemonlegendsarkeus_ojzgbd.jpg"
     },
     {
         id: 21,
@@ -165,7 +165,7 @@ export const data = [
         precio: "$49",
         stock: 5,
         categoria: "nintendoswitch",
-        img: "/assets/img/items/nintendoswitch/supermarioodyssey.jpg"
+        img: "https://res.cloudinary.com/dzsqibrvh/image/upload/v1684896551/Nemezis/nintendoswitch/supermarioodyssey_bh8nic.jpg"
     },
     {
         id: 22,
@@ -173,6 +173,6 @@ export const data = [
         precio: "$49",
         stock: 5,
         categoria: "nintendoswitch",
-        img: "/assets/img/items/nintendoswitch/supersmashbros.jpg"
+        img: "https://res.cloudinary.com/dzsqibrvh/image/upload/v1684896555/Nemezis/nintendoswitch/supersmashbros_pc1zqj.jpg"
     }
 ]

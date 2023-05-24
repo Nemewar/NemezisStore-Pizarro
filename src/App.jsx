@@ -12,6 +12,7 @@ import { Nosotros } from './components/Nosotros/Nosotros';
 import { Cart } from './components/Cart/Cart';
 import { CartProvider } from './components/context/CartContext';
 import { Footer } from './components/Footer/Footer';
+import { exportDataToFirestore2} from './services/firestore';
 import { exportDataToFirestore} from './services/firestore';
 import { useEffect } from 'react';
 import { UserProvider } from './components/context/UserContext';
@@ -30,7 +31,8 @@ import { ModalProvider } from './components/context/ModalContext';
 function App() {
 
   useEffect(() => {
-    exportDataToFirestore()
+    exportDataToFirestore();
+    exportDataToFirestore2();
   }, [])
 
 

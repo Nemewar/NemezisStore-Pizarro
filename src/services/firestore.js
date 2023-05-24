@@ -53,12 +53,30 @@ const exportDataToFirestore = async () => {
     }
 }
 
+const exportDataToFirestore2 = async () => {
+    //si no existe la coleccion la crea
+    const miColeccion = collection(firestore, "productos");
+    //la data a exportar tiene que ser un objeto
+    let nData = data.map(item => {
+        const { id, ...itemSinId } = item;
+        return itemSinId;
+    })
+
+    for (let item of nData) {
+        const queryImg = query(miColeccion, where("img", "==", item.img));
+        const fItem = await getDocs(queryImg);
+        if (fItem.empty) {
+            await addDoc(miColeccion, item)
+        }
+    }
+}
 
 
 export {
     app,
     firestore,
-    exportDataToFirestore
+    exportDataToFirestore,
+    exportDataToFirestore2
 }
 
 
