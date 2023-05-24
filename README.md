@@ -36,7 +36,7 @@ con Firebase mediante correo y contraseña o mediante Google.
 
 Para ver el funcionamiento de la aplicación puedes ver el despliegue de la misma en Netlify o instalar el proyecto localmente:
 
-- **Deploy en Netlify:**   [NemezisStore](https://nemezis-store.netlify.app/)
+- **Deploy en Netlify:**   [NemezisStore](https://nemezis-store-2.netlify.app/)
 
 - Instalar la aplicación:
 
